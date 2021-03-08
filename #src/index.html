@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+	@@include('_head.html',{
+	"title": "New Project"
+	})
+	<body>
+		<!-- == WRAPPER ================== -->
+		<div class="wrapper home">
+			<!-- == TOP LINE ================== -->
+			@@include('common/header/_header.html',{})
+			<!-- == // TOP LINE ================== -->
+
+			<!-- == PAGE CONTENT ================== -->
+			<main class="page"> 
+				@@include('common/hero/_hero.html',{
+					"title": "Новобаварська пивоварня",
+					"subtitle": "150 років якості та натхнення",
+					"bg": "img/photo/hero01.jpg",
+					"mbg": "img/photo/horo01-mobile.jpg"
+				})
+
+				<section class="small-story-block">
+					<div class="small-story-block__img ibg">
+						<picture>
+							<source class="lazy" srcset="img/photo/placeholder.jpg" data-srcset="img/photo/small-story-bg.jpg" media="(min-width: 576px)">
+							<img class="lazy" data-src="img/photo/small-story-bg-mobile.jpg" data-srcset="img/photo/small-story-bg-mobile.jpg" src="img/photo/placeholder.jpg" alt="img">
+						</picture>
+					</div>
+					<div class="small-story-block__body">
+						<h3 class="small-story-block__title title-3 title-decor">
+							<span>
+								Відродження Легенди
+							</span>
+						</h3>
+						<div class="small-story-block__text text-content">
+							<p>
+								Иностранцы открывали заводы и строили целые жилые районы. Кто-то из иностранных подданных становился миллионером, кто-то оставался ни с чем.
+							</p>
+							<p>
+								Первыми стали варить пиво в Харькове переселенцы с правобережной Украины. Они пришли на эти земли во время освободительной войны 1648—1657 годов под командованием Богдана Хмельницкого.
+							</p>
+						</div>
+						<div class="small-story-block__bottom">
+							<a href="#" class="learn-more-btn text-2">
+								<div class="circle-decor">
+									<span class="circle-decor__circle"></span>
+									<span class="circle-decor__icon">
+										<img src="img/icons/arrow-right.svg" alt="icon" class="img-svg">
+									</span>
+								</div>
+								Дізнатися більше
+							</a>
+						</div>
+					</div>
+				</section>
+
+				<section class="posts-block">
+					<div class="container">
+						<h3 class="posts-block__title title-3 title-decor">
+							<span>
+								Сьогодення
+							</span>
+						</h3>
+					</div>
+					<div class="posts-block__slider swiper-container">
+						<div class="swiper-wrapper">
+							<div class="swiper-slide">
+								<a href="#" class="card-post">
+									<div class="card-post__img ibg">
+										<img src="img/photo/placeholder.jpg" data-src="img/photo/card-post01.jpg" class="swiper-lazy" alt="img">
+									</div>
+									<div class="card-post__body">
+										<div class="card-post__text-wrap">
+											<h5 class="card-post__title title-5">
+												Экскурсии на производство
+											</h5>
+											<div class="card-post__text text-2">
+												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet lobortis maecenas euismod ut pulvinar nam sit urna.
+											</div>
+											<div class="card-post__date text-4">
+												01 / 01 / 2021
+											</div>
+											<div class="circle-decor">
+												<span class="circle-decor__circle"></span>
+												<span class="circle-decor__icon">
+													<img src="img/icons/arrow-right.svg" alt="icon" class="img-svg">
+												</span>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="swiper-slide">
+								<a href="#" class="card-post">
+									<div class="card-post__img ibg">
+										<img src="img/photo/placeholder.jpg" data-src="img/photo/card-post02.jpg" class="swiper-lazy" alt="img">
+									</div>
+									<div class="card-post__body">
+										<div class="card-post__text-wrap">
+											<h5 class="card-post__title title-5">
+												Производство и сырье
+											</h5>
+											<div class="card-post__text text-2">
+												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet lobortis maecenas euismod ut pulvinar nam sit urna.
+											</div>
+											<div class="card-post__date text-4">
+												01 / 01 / 2021
+											</div>
+											<div class="circle-decor">
+												<span class="circle-decor__circle"></span>
+												<span class="circle-decor__icon">
+													<img src="img/icons/arrow-right.svg" alt="icon" class="img-svg">
+												</span>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+							<div class="swiper-slide">
+								<a href="#" class="card-post">
+									<div class="card-post__img ibg">
+										<img src="img/photo/placeholder.jpg" data-src="img/photo/card-post03.jpg" class="swiper-lazy" alt="img">
+									</div>
+									<div class="card-post__body">
+										<div class="card-post__text-wrap">
+											<h5 class="card-post__title title-5">
+												Про пивоварню
+											</h5>
+											<div class="card-post__text text-2">
+												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquet lobortis maecenas euismod ut pulvinar nam sit urna.
+											</div>
+											<div class="card-post__date text-4">
+												01 / 01 / 2021
+											</div>
+											<div class="circle-decor">
+												<span class="circle-decor__circle"></span>
+												<span class="circle-decor__icon">
+													<img src="img/icons/arrow-right.svg" alt="icon" class="img-svg">
+												</span>
+											</div>
+										</div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="posts-block__slider-control">
+							<div class="posts-block__slider-btn posts-block__slider-btn-prev">
+								<span>
+									<img src="img/icons/chevron-left.svg" alt="icon" class="img-svg">
+								</span>
+							</div>
+							<div class="posts-block__slider-icon">
+								<picture>
+									<source srcset="img/icons/mous.svg" media="(min-width: 992px)">
+									<img src="img/icons/hand.svg" alt="icon">
+								</picture>
+							</div>
+							<div class="posts-block__slider-btn posts-block__slider-btn-next">
+								<span>
+									<img src="img/icons/chevron-right.svg" alt="icon" class="img-svg">
+								</span>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="stock-block">
+					<div class="stock-block__body">
+						<h3 class="stock-block__title title-3 title-decor">
+							<span>
+								Акція
+							</span>
+						</h3>
+						<div class="stock-block__column-1">
+							<div class="stock-block__text-wrap">
+								<div class="stock-block__logo">
+									<img class="img-svg" src="img/logo/logo.svg" alt="logo">
+								</div>
+								<div class="stock-block__title-2">
+									<strong>Купи</strong>
+									100 л пива
+								</div>
+								<div class="stock-block__subtitle text-1">
+									і стань нашим АКЦІЯнером
+								</div>
+								<a href="#" class="learn-more-btn text-2">
+									<div class="circle-decor">
+										<span class="circle-decor__circle"></span>
+										<span class="circle-decor__icon">
+											<img src="img/icons/arrow-right.svg" alt="icon" class="img-svg">
+										</span>
+									</div>
+									Дізнатися більше
+								</a>
+							</div>
+						</div>
+						<div class="stock-block__column-2">
+							<div class="stock-block__img ibg">
+								<picture>
+									<source class="lazy" src="img/photo/placeholder.jpg" srcset="img/photo/stock-bg.jpg" data-srcset="img/photo/stock-bg.jpg" media="(min-width: 576px)">
+									<img class="lazy" data-src="img/photo/stock-bg-mobile.jpg" data-srcset="img/photo/stock-bg-mobile.jpg" src="img/photo/placeholder.jpg" alt="img">
+								</picture>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section class="products-block">
+					<div class="container">
+						<h3 class="products-block__title title-3 title-decor">
+							<span>
+								Наше пиво
+							</span>
+						</h3>
+						<div class="products-block__body">
+							<div class="products-block__column">
+								<a href="#" class="products-block__item">
+									<div class="products-block__decor">
+										<img src="img/photo/hop01.png" alt="hop" class="products-block__hop products-block__hop-1">
+										<img src="img/photo/hop02.png" alt="hop" class="products-block__hop products-block__hop-2">
+										<img src="img/photo/hop03.png" alt="hop" class="products-block__hop products-block__hop-3">
+										<img src="img/photo/hop04.png" alt="hop" class="products-block__hop products-block__hop-4">
+										<img src="img/photo/hop05.png" alt="hop" class="products-block__hop products-block__hop-5">
+										<img src="img/photo/hop06.png" alt="hop" class="products-block__hop products-block__hop-6">
+									</div>
+									<div class="products-block__inner">
+										<div class="products-block__img">
+											<img src="img/photo/Beer@2x 2.png" alt="beer">
+										</div>
+										<div class="products-block__item-title text-5"><span>Пиво №1</span><span>Пиво №1</span></div>
+										<div class="products-block__desc text-3">“Якесь дуже смачне пиво”</div>
+									</div>
+								</a>
+							</div>
+							<div class="products-block__column">
+								<a href="#" class="products-block__item">
+									<div class="products-block__decor">
+										<img src="img/photo/hop01.png" alt="hop" class="products-block__hop products-block__hop-1">
+										<img src="img/photo/hop02.png" alt="hop" class="products-block__hop products-block__hop-2">
+										<img src="img/photo/hop03.png" alt="hop" class="products-block__hop products-block__hop-3">
+										<img src="img/photo/hop04.png" alt="hop" class="products-block__hop products-block__hop-4">
+										<img src="img/photo/hop05.png" alt="hop" class="products-block__hop products-block__hop-5">
+										<img src="img/photo/hop06.png" alt="hop" class="products-block__hop products-block__hop-6">
+									</div>
+									<div class="products-block__inner">
+										<div class="products-block__img">
+											<img src="img/photo/Beer@2x 2.png" alt="beer">
+										</div>
+										<div class="products-block__item-title text-5"><span>Пиво №2</span><span>Пиво №2</span></div>
+										<div class="products-block__desc text-3">“Пшеничное нефильтрованное”</div>	
+									</div>
+								</a>
+							</div>
+							<div class="products-block__column">
+								<a href="#" class="products-block__item">
+									<div class="products-block__decor">
+										<img src="img/photo/hop01.png" alt="hop" class="products-block__hop products-block__hop-1">
+										<img src="img/photo/hop02.png" alt="hop" class="products-block__hop products-block__hop-2">
+										<img src="img/photo/hop03.png" alt="hop" class="products-block__hop products-block__hop-3">
+										<img src="img/photo/hop04.png" alt="hop" class="products-block__hop products-block__hop-4">
+										<img src="img/photo/hop05.png" alt="hop" class="products-block__hop products-block__hop-5">
+										<img src="img/photo/hop06.png" alt="hop" class="products-block__hop products-block__hop-6">
+									</div>
+									<div class="products-block__inner">
+										<div class="products-block__img">
+											<img src="img/photo/Beer@2x 2.png" alt="beer">
+										</div>
+										<div class="products-block__item-title text-5"><span>Пиво №1</span><span>Пиво №1</span></div>
+										<div class="products-block__desc text-3">“Якесь дуже смачне пиво”</div>
+									</div>
+								</a>
+							</div>
+						</div>
+						<div class="products-block__bottom">
+							<a href="#" class="learn-more-btn text-2">
+								<div class="circle-decor">
+									<span class="circle-decor__circle"></span>
+									<span class="circle-decor__icon">
+										<img src="img/icons/arrow-right.svg" alt="icon" class="img-svg">
+									</span>
+								</div>
+								Дізнатися більше
+							</a>
+						</div>
+					</div>
+				</section>
+
+				<section class="for-partners-block">
+					<div class="for-partners-block__item for-partners-block__item-1">
+						<div class="for-partners-block__img ibg">
+							<picture>
+								<source class="lazy" srcset="img/photo/placeholder.jpg" data-srcset="img/photo/for-partner-bg01.jpg" media="(min-width: 576px)">
+								<img class="lazy" data-src="img/photo/for-partner-bg01-mobile.jpg" src="img/photo/placeholder.jpg" alt="img">
+							</picture>
+						</div>
+						<div class="for-partners-block__body">
+							<a href="#" class="for-partners-block__text-wrap">
+								<h2 class="for-partners-block__title title-2 title-line">
+									Тим, хто продає пиво
+								</h2>
+								<div class="for-partners-block__text text-2">
+									Ми приглашаем к сотрудничеству всех: от крупных дистрибьюторов до небольших розничных сетей.
+								</div>
+								<span href="#" class="learn-more-btn learn-more-btn_transparent text-2">
+									<div class="circle-decor">
+										<span class="circle-decor__circle"></span>
+										<span class="circle-decor__icon">
+											<img src="img/icons/arrow-right.svg" alt="icon" class="img-svg">
+										</span>
+									</div>
+									Дізнатися більше
+								</span>
+							</a>
+						</div>
+					</div>
+					<div class="for-partners-block__item for-partners-block__item-2">
+						<div class="for-partners-block__img ibg">
+							<picture>
+								<source class="lazy" srcset="img/photo/placeholder.jpg" data-srcset="img/photo/for-partner-bg02.jpg" media="(min-width: 576px)">
+								<img class="lazy" data-src="img/photo/for-partner-bg02-mobile.jpg" src="img/photo/placeholder.jpg" alt="img">
+							</picture>
+						</div>
+						<div class="for-partners-block__body">
+							<a href="#" class="for-partners-block__text-wrap">
+								<h2 class="for-partners-block__title title-2 title-line">
+									Тим, хто любить пиво
+								</h2>
+								<div class="for-partners-block__text text-2">
+									Ми приглашаем к сотрудничеству всех: от крупных дистрибьюторов до небольших розничных сетей.
+								</div>
+								<span href="#" class="learn-more-btn learn-more-btn_transparent text-2">
+									<div class="circle-decor">
+										<span class="circle-decor__circle"></span>
+										<span class="circle-decor__icon">
+											<img src="img/icons/arrow-right.svg" alt="icon" class="img-svg">
+										</span>
+									</div>
+									Дізнатися більше
+								</span>
+							</a>
+						</div>
+					</div>
+				</section>
+
+
+            </main>
+			<!-- == // PAGE CONTENT ================== -->
+			<!-- == FOOTER ================== -->
+			@@include('common/footer/_footer.html',{})
+			<!-- == // FOOTER ================== -->
+		</div>
+		<!-- == // WRAPPER ================== -->
+		@@include('_js.html',{})
+	</body>
+</html>
