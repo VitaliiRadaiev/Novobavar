@@ -956,3 +956,109 @@
 }
 
 
+
+
+
+
+
+
+.map-block {
+    padding-top: 97px;
+
+    @media (max-width: $md3+px) {
+        padding-top: 50px;
+    }
+
+    &__title {
+        margin-bottom: 60px;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 53px;
+        }
+    }
+
+    &__inner {
+        position: relative;
+    }
+
+    &__nav {
+        position: absolute;
+        z-index: 2;
+        top: 50%;
+        right: 0;
+        display: flex;
+        flex-direction: column;
+        transform: translateY(-50%);
+
+        @media (max-width: $md3+px) {
+            position: static;
+            align-self: center;
+            transform: translate(0);
+            margin-bottom: 39px;
+        }
+    }
+
+    &__nav-item {
+        display: inline-flex;
+        color: #fff;
+        min-height: 62px;
+        background-color: rgba($mainColor, 0.4);
+        border-radius: 999px;
+        border-bottom-right-radius: 0;
+        border-top-right-radius: 0;
+        align-items: center;
+        padding: 11px 21px;
+        word-wrap: break-word;
+        width: 129px;
+        transition: all .3s ease;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 1.25em;
+        align-self: flex-end;
+
+        &:not(:last-child) {
+            margin-bottom: 15px;
+
+            @media (max-width: $md3+px) {
+                margin-bottom: 9px;
+            }
+        }
+
+        &.active {
+            background-color: rgba($mainColor, 0.8);
+            width: 242px;
+            min-height: 74px;
+
+            @media (max-width: $md3+px) {
+                width: auto;
+            }
+        }
+
+        @media (min-width: 992px) {
+            &:hover {
+                background-color: rgba($mainColor, 0.8);
+            }
+        }
+
+        @media (max-width: $md3+px) {
+            align-self: center;
+            min-height: 52px !important;
+            text-align: center;
+            min-width: 231px;
+            justify-content: center;
+            border-bottom-right-radius: 999px;
+            border-top-right-radius: 999px;
+        }
+    }
+
+    &__map {
+        height: 723px;
+
+        @media (max-width: $md3+px) {
+            height: 385px;
+        }
+    }
+}
+
+

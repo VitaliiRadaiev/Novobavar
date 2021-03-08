@@ -481,11 +481,70 @@
 					</div>
 				</section>
 
-
+				<section class="map-block">
+					<div class="container">
+						<h3 class="map-block__title title-3 title-decor"><span>Де розливають?</span></h3>
+					</div>
+					<div class="map-block__inner">
+						<div class="map-block__nav">
+							<a href="#" class="map-block__nav-item active">Заклади</a>
+							<a href="#" class="map-block__nav-item">Магазини</a>
+							<a href="#" class="map-block__nav-item">Фірмовий магазин</a>
+						</div>
+						<div class="map-block__map" id="map"></div>
+					</div>
+				</section>
             </main>
 			<!-- == // PAGE CONTENT ================== -->
 			<!-- == FOOTER ================== -->
-			
+			<footer class="footer">
+    <div class="footer__main">
+        <div class="footer__img ibg">
+            <picture>
+                <source class="lazy" srcset="img/photo/placeholder.jpg" data-srcset="img/photo/footer-bg.jpg" media="(min-width: 576px)" >
+                <img class="lazy" data-src="img/photo/footer-bg-mobile.jpg" src="img/photo/placeholder.jpg" alt="img">
+            </picture>
+        </div>
+        <div class="container">
+            <h3 class="footer__title title-3 title-decor"><span>Заявка на партнерство</span></h3>
+            <form action="#" class="form-footer">
+                <div class="form-footer__item">
+                    <input type="text" class="form-footer__input" placeholder="Як до Вас звертатися?">
+                </div>
+                <div class="form-footer__item">
+                    <input type="email" class="form-footer__input" placeholder="Ваш e-mail">
+                </div>
+                <div class="form-footer__item">
+                    <input autocomplete="off" type="text" class="form-footer__input _mask" placeholder="Ваш телефон" data-mask="+3(999)999-99-99">
+                </div>
+                <div class="form-footer__item form-footer__item_textarea">
+                    <input type="text" class="form-footer__input" placeholder="Повідомлення">
+                </div>
+                <button type="submit" class="form-footer__btn learn-more-btn learn-more-btn_transparent text-2">
+                    <div class="circle-decor">
+                        <span class="circle-decor__circle"></span>
+                        <span class="circle-decor__icon">
+                            <img src="img/icons/arrow-right.svg" alt="icon" class="img-svg">
+                        </span>
+                    </div>
+                    Надіслати
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="footer__bottom">
+        <div class="footer__bottom-body container">
+            <div class="footer__logo logo">
+               <a href="#">
+                <img src="img/logo/logo.svg" alt="logo" class="img-svg">
+               </a>
+            </div>
+            <div class="footer__copy text-4">
+                2021 © All rights are reserved.
+            </div>
+        </div>
+    </div>
+</footer>
 			<!-- == // FOOTER ================== -->
 		</div>
 		<!-- == // WRAPPER ================== -->
@@ -496,5 +555,9 @@
 src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGPTlbk8w1g&callback=initMap&libraries=&v=weekly"
 defer
 ></script> -->
+		 <script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGPTlbk8w1g&callback=initMap&libraries=&v=weekly"
+		defer
+		></script>
 	</body>
 </html>

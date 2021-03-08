@@ -74,4 +74,4 @@ $(document).ready(function () {
 	
 });
 
-//@@include('plagins/lazy-load.js');
+@@include('blocks/map.js');

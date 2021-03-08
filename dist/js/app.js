@@ -999,74 +999,100 @@ if(priceSlider) {
 	
 });
 
-//// html example --- <img class="lazy" data-src="https://images.unsplash.com/photo-1606851091851-e8c8c0fca5ba?ixid=MXwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" src="img/photo/placeholder.jpg" alt="img">
+{
 
 
-// === lazy load ==================================================================
-document.addEventListener("DOMContentLoaded", function () {
-	var lazyImages = [].slice.call(document.querySelectorAll(".lazy"));
-    let active = false;
+	var isMap = document.getElementById("map");
+	if(isMap) {
+		var map;
 
-	if ("IntersectionObserver" in window) {
-        
-		let lazyImageObserver = new IntersectionObserver(function (entries, observer) {
-			entries.forEach(function (entry) {
-				if (entry.isIntersecting) {
-					let lazyImage = entry.target;
-          if(lazyImage.dataset.src) {
-            lazyImage.src = lazyImage.dataset.src;
-          }
-          if(lazyImage.dataset.srcset) {
-            lazyImage.srcset = lazyImage.dataset.srcset;
-          }
-					lazyImage.classList.remove("lazy");
-					lazyImageObserver.unobserve(lazyImage);
-				}
+		var center = {
+			lat: 49.07715,
+			lng: 33.42683,
+		}
+
+		var markerPosition = {
+			lat: 49.07715,
+			lng: 33.42683,
+		}
+
+		function initMap() {
+
+			map = new google.maps.Map(document.getElementById('map'), {
+				center: {lat: center.lat, lng: center.lng},
+
+				zoom: 6,
+
+				styles: [
+					{
+					  "featureType": "administrative.country",
+					  "elementType": "labels.text.fill",
+					  "stylers": [
+						{
+						  "color": "#121212"
+						}
+					  ]
+					},
+					{
+					  "featureType": "administrative.locality",
+					  "elementType": "labels.text.fill",
+					  "stylers": [
+						{
+						  "color": "#fba13d"
+						}
+					  ]
+					},
+					{
+					  "featureType": "landscape.natural",
+					  "elementType": "geometry.fill",
+					  "stylers": [
+						{
+						  "color": "#ffffff"
+						}
+					  ]
+					},
+					{
+					  "featureType": "poi",
+					  "elementType": "geometry.fill",
+					  "stylers": [
+						{
+						  "color": "#fafafa"
+						}
+					  ]
+					},
+					{
+					  "featureType": "road.highway",
+					  "elementType": "geometry.stroke",
+					  "stylers": [
+						{
+						  "color": "#ffffff"
+						}
+					  ]
+					},
+					{
+					  "featureType": "water",
+					  "elementType": "geometry.fill",
+					  "stylers": [
+						{
+						  "color": "#ededed"
+						}
+					  ]
+					}
+				  ]
 			});
-		});
 
-		lazyImages.forEach(function (lazyImage) {
-			lazyImageObserver.observe(lazyImage);
-		});
-	} else {
-        const lazyLoad = function() {
-            if (active === false) {
-              active = true;
-              setTimeout(function() {
-                lazyImages.forEach(function(lazyImage) {
-                  if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== "none") {
-                    
-                    if(lazyImage.dataset.src) {
-                      lazyImage.src = lazyImage.dataset.src;
-                    }
-                    if(lazyImage.dataset.srcset) {
-                      lazyImage.srcset = lazyImage.dataset.srcset;
-                    }
-                    lazyImage.classList.remove("lazy");
-        
-                    lazyImages = lazyImages.filter(function(image) {
-                      return image !== lazyImage;
-                    });
-        
-                    if (lazyImages.length === 0) {
-                      document.removeEventListener("scroll", lazyLoad);
-                      window.removeEventListener("resize", lazyLoad);
-                      window.removeEventListener("orientationchange", lazyLoad);
-                    }
-                  }
-                });
-        
-                active = false;
-              }, 200);
-            }
-          };
-      
-          lazyLoad();
-        
-          document.addEventListener("scroll", lazyLoad);
-          window.addEventListener("resize", lazyLoad);
-          window.addEventListener("orientationchange", lazyLoad);
-    }
-    
-});
-// === // lazy load ==================================================================;
+			var marker = new google.maps.Marker({
+
+			    position: {lat: markerPosition.lat, lng: markerPosition.lng},
+
+			    map: map,
+
+			    title: '',
+			    label: '',
+
+			    icon: 'img/icons/local.svg',
+			});
+
+		}
+	}
+};

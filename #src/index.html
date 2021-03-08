@@ -342,7 +342,19 @@
 					</div>
 				</section>
 
-
+				<section class="map-block">
+					<div class="container">
+						<h3 class="map-block__title title-3 title-decor"><span>Де розливають?</span></h3>
+					</div>
+					<div class="map-block__inner">
+						<div class="map-block__nav">
+							<a href="#" class="map-block__nav-item active">Заклади</a>
+							<a href="#" class="map-block__nav-item">Магазини</a>
+							<a href="#" class="map-block__nav-item">Фірмовий магазин</a>
+						</div>
+						<div class="map-block__map" id="map"></div>
+					</div>
+				</section>
             </main>
 			<!-- == // PAGE CONTENT ================== -->
 			<!-- == FOOTER ================== -->
@@ -351,5 +363,9 @@
 		</div>
 		<!-- == // WRAPPER ================== -->
 		@@include('_js.html',{})
+		 <script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD7Q82l2QjSzJJk1uUW3OzUBGPTlbk8w1g&callback=initMap&libraries=&v=weekly"
+		defer
+		></script>
 	</body>
 </html>
