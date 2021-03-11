@@ -923,27 +923,25 @@ if(priceSlider) {
                 }
             },
             on: {
-                init: () => {
-                    let cards = postsBlock.querySelectorAll('.card-post');
-                    if(cards.length) {
-                        cards.forEach(card => {
-                            let text = card.querySelector('.card-post__text');
+                init: (slider) => {
+                
+                    slider.slides.forEach(slid => {
+                        let card = slid.querySelector('.card-post');
+                        let text = slid.querySelector('.card-post__text');
 
-                            card.addEventListener('mouseenter', function() {
-                                if(document.documentElement.clientWidth >= 992) {
-                                    this.classList.add('_scale');
-                                    _slideDown(text,600)
-                                }
-                            })
-                            card.addEventListener('mouseleave', function() {
-                                if(document.documentElement.clientWidth >= 992) {
-                                    this.classList.remove('_scale');
-                                    _slideUp(text,600)
-                                }
-                            })
-                            
+                        card.addEventListener('mouseenter', function() {
+                            if(document.documentElement.clientWidth >= 992) {
+                                this.classList.add('_scale');
+                                _slideDown(text,600)
+                            }
                         })
-                    }
+                        card.addEventListener('mouseleave', function() {
+                            if(document.documentElement.clientWidth >= 992) {
+                                this.classList.remove('_scale');
+                                _slideUp(text,600)
+                            }
+                        })
+                    })
                 }
             }
             
@@ -976,7 +974,17 @@ if(priceSlider) {
 };
 
 
+	let btnUp = document.querySelector('.btn-to-up');
+	if(btnUp) {
+		window.addEventListener('scroll', () => {
+			if(window.pageYOffset > document.documentElement.clientHeight) {
+				btnUp.style.display = 'block';
+			} else {
+				btnUp.style.display = 'none';
+			}
+		})
 
+	}
 
 
 	$('img.img-svg').each(function(){

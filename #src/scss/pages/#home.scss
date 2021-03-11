@@ -747,35 +747,47 @@
         transition: all 1s ease;
         opacity: 0;
         z-index: 1;
+        display: block;
+        text-align: center;
+        & img {
+            max-width: 100%;
+            height: auto;
+        }
         &-1 {
             top: 14%;
             left: 43%;
             transform: rotate(-21deg) scale(0.7);
+            width: 51px;
         }
         &-2 {
             top: 26%;
             left: 38%;
             transform:  scale(0.7);
+            width: 90px;
         }
         &-3 {
             top: 44%;
             left: 28%;
             transform: rotate(25deg) scale(0.7);
+            width: 155px;
         }
         &-4 {
             top: 15%;
             left: 40%;
             transform:  scale(0.7);
+            width: 86px;
         }
         &-5 {
             top: 32%;
             left: 36%;
             transform:  scale(0.7);
+            width: 123px;
         }
         &-6 {
             top: 62%;
             left: 33%;
             transform:  scale(0.7);
+            width: 125px;
         }
     }
 
@@ -856,6 +868,14 @@
 
             &::before {
                 background-color: rgba(#fff, 0.8);
+            }
+        }
+
+        & .for-partners-block__img {
+            @media (max-width: $md3+px) {
+                & img {
+                    object-position: top;
+                }
             }
         }
     }

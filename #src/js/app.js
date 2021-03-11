@@ -51,7 +51,17 @@ $(document).ready(function () {
 	@@include('pages/#home.js');
 
 
+	let btnUp = document.querySelector('.btn-to-up');
+	if(btnUp) {
+		window.addEventListener('scroll', () => {
+			if(window.pageYOffset > document.documentElement.clientHeight) {
+				btnUp.style.display = 'block';
+			} else {
+				btnUp.style.display = 'none';
+			}
+		})
 
+	}
 
 
 	$('img.img-svg').each(function(){

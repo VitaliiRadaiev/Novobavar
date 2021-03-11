@@ -457,7 +457,36 @@ button.btn-default {
     }
 }
 
+.btn-to-up {
+	position: fixed;
+	right: 5%;
+	bottom: 10%;
+	z-index: 50;
+	display: none;
+	animation: btnUpAnim .6s ease;
+	& .circle-decor__icon {
+		transform: rotate(-90deg);
+	}
 
+	@media (min-width: 992px) {
+        &:hover {
+            & .circle-decor__circle {
+                transform: translate(-50%, -50%) rotate(320deg) !important;
+            }
+        }
+    }
+}
+
+@keyframes btnUpAnim {
+	from {
+		transform: translateY(100px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0px);
+		opacity: 1;
+	}
+}
 
 
 // === and btn ========================================================================
