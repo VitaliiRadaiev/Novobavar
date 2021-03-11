@@ -1,0 +1,130 @@
+.text-head-block {
+    padding-top: 128px;
+    margin-bottom: 44px;
+    @media (max-width: $md2+px) {
+        padding-top: 28px;
+    }
+
+    @media (max-width: $md3+px) {
+        margin-bottom: 15px;
+    }
+
+    &__body {
+    }
+
+    &__row-1 {
+        display: flex;
+        margin-bottom: 20px;
+
+        @media (max-width: 1267px) {
+            display: block;
+        }
+    }
+
+    &__row-2 {
+        margin-bottom: 17px;
+        & .text-head-block__img + p {
+            padding-top: 30px;
+        }
+
+        @media (max-width: $md3+px) {
+            display: flex;
+            flex-direction: column;
+
+            & .text-head-block__img {
+                order: 1;
+                margin-bottom: 14px;
+                & + p {
+                    padding-top: 0;
+                }
+            }
+
+            & p:last-child {
+                order: 1;
+            }
+        }
+    }
+
+    &__column {
+        flex: 1 1 auto;
+        position: relative;
+
+        &:nth-child(2) {
+            flex: 0 0 calc(188px + 29.76%);
+            margin-left: 20px;
+
+            @media (max-width: 1267px) {
+               text-align: center;
+               margin-left: 0;
+            }
+
+            & .text-head-block__img {
+                position: absolute;
+                left: 0;
+                bottom: 26px;
+                
+                & img {
+                    max-width: none;
+                }
+
+                @media (max-width: 1267px) {
+                    position: relative;
+                    left: 0;
+                    bottom: 0;
+                    margin-top: 40px;
+                    display: inline-block;
+                    margin: 40px 0 20px;
+
+                    & img {
+                        max-width: 100%;
+                    }
+                }
+
+                @media (max-width: $md3+px) {
+                    margin-top: 0;
+                    margin: 0 -20px 0;
+                }
+            }
+        }
+    }
+
+    &__img {
+       
+        position: relative;
+
+        @media (max-width: $md3+px) {
+            margin: 0 -20px;
+        }
+
+        & img {
+            border-radius: 10px;
+            max-width: 100%;
+
+            @media (max-width: $md3+px) {
+                border-radius: 0;
+                width: 100%;
+                max-width: none;
+            }
+        }
+
+        & .circle-decor {
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 0;
+            transform: translate(-21%, -21%);
+            background-color: transparent;
+            width: 80px;
+            height: 80px;
+
+            @media (max-width: $md3+px) {
+                transform: translate(-16%, -5%);
+            }
+        }
+    }
+
+    &__bottom {
+        text-align: center;
+        padding: 15px 0;
+    }
+}

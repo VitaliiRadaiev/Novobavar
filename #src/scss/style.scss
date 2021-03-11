@@ -157,7 +157,14 @@ textarea {
 	appearance: none;
 }
 
-
+@keyframes rotateAnim {
+    from {
+        transform: translate(-50%, -50%) rotate(0);
+    }
+    to {
+        transform:translate(-50%, -50%) rotate(360deg);
+    }
+}
 
 .center {
 	text-align: center;
@@ -443,6 +450,10 @@ button.btn-default {
             background-color: $mainColor;
             transform: translate(-50%, -60%);
         }
+
+		&.circle-decor__circle_rotate {
+			animation: rotateAnim 4s linear infinite;
+		}
     }
 
     &__icon {
@@ -503,6 +514,22 @@ button.btn-default {
 
 }
 
+.float-right {
+	float: right;
+	margin-left: 20px;
+}
+.float-left {
+	float: left;
+	margin-right: 20px;
+}
+
+.clear {
+	&:after {
+		display: inline-block;
+		content: '';
+		clear: both;
+	}
+}
 
 // === TEXT CONTETN BLOCK ========================================================================
 .text-content {
@@ -514,7 +541,14 @@ button.btn-default {
 
 	& h1 {}
 	& h2 {
+		margin-bottom: 0.8em;
 
+		&.title-line {
+			&::before {
+				bottom: -9px;
+				width: 242px;
+			}
+		}
 	}
 	& h3 {}
 	& h4 {}
@@ -525,7 +559,7 @@ button.btn-default {
 	& h6 {}
 
 	& p {
-
+		margin-bottom: 1.36em;
 	}
 
 	& ul {
@@ -544,6 +578,9 @@ button.btn-default {
 @import "../common/header/#header";
 @import "../common/footer/#footer";
 @import "../common/hero/hero";
+@import "../common/breadcrumbs/breadcrumbs";
+@import "../common/text-head-block/text-head-block";
+@import "../common/posts-block/posts-block";
 // ==== BLOCKS =====================================================
 
 
@@ -552,6 +589,10 @@ button.btn-default {
 	// ==== HOME =====================================================
 	@import "pages/#home";
 	// ==== AND HOME =====================================================
+	
+	// ==== HISTORY PAGE =====================================================
+	@import "pages/#history-page";
+	// ==== AND HISTORY PAGE =====================================================
 	
 // ==== AND PAGES =====================================================
 

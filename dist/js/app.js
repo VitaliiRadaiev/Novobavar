@@ -878,8 +878,6 @@ if(priceSlider) {
         btnSwipeClose.addEventListener('swiped-up', closeMenu);
     }
 };
-	
-	
 	{
     let postsBlock = document.querySelector('.posts-block');
     if(postsBlock) {
@@ -946,10 +944,41 @@ if(priceSlider) {
             }
             
         });
+
+        
+        let list = document.querySelector('.posts-block .posts-block__list');
+        if(list) {
+            if(document.documentElement.clientWidth < 768) {
+                let btn = document.querySelector('.posts-block__bottom .learn-more-btn');
+                let arr = [...list.querySelectorAll('.posts-block__item')];
+                if(arr.length > 4) {
+                    arr = arr.slice(4, arr.length);
+                    let div = document.createElement('div');
+                    div.className = '_toggleWrap';
+                    div.append(...arr);
+        
+                    //let container = list.querySelector('.container')
+                    list.append(div);
+        
+                }
+
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    let block = list.querySelector('._toggleWrap');
+                    _slideDown(block, 600);
+                    btn.style.display = 'none';
+                })
+                
+            }
+        }
+        
         
     }
 }
-
+;
+	
+	
+	
 
 {
     let partnersBlock = document.querySelector('.for-partners-block');
