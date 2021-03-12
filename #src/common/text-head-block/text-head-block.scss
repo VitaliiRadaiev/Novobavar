@@ -52,10 +52,11 @@
         &:nth-child(2) {
             flex: 0 0 calc(188px + 29.76%);
             margin-left: 20px;
-
+            min-height: 440px;
             @media (max-width: 1267px) {
                text-align: center;
                margin-left: 0;
+               min-height: auto;
             }
 
             & .text-head-block__img {

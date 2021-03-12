@@ -56,7 +56,7 @@
                         card.addEventListener('mouseleave', function() {
                             if(document.documentElement.clientWidth >= 992) {
                                 this.classList.remove('_scale');
-                                _slideUp(text,600)
+                                _slideUp(text,100)
                             }
                         })
                     })
@@ -64,6 +64,39 @@
             }
             
         });
+
+        function cardPostHoverHandler() {
+            let postsBlockSimple = document.querySelector('.posts-block_simple');
+            if(postsBlockSimple) {
+                let cards = postsBlockSimple.querySelectorAll('.card-post');
+                if(cards.length) {
+                    cards.forEach(card => {
+                        let text = card.querySelector('.card-post__text');
+           
+
+                        card.addEventListener('mouseenter', function() {
+                            if(document.documentElement.clientWidth >= 992) {
+                                if(text) {
+                                     _slideDown(text,600)
+                                }
+                            }
+
+                            
+                        })
+                        card.addEventListener('mouseleave', function() {
+                            if(document.documentElement.clientWidth >= 992) {
+                                if(text) {
+                                     _slideUp(text,100);
+                                }
+                            }
+                        })
+
+                    })
+                }
+            }
+        }
+
+        cardPostHoverHandler();
 
         
         // let list = document.querySelector('.posts-block .posts-block__list');

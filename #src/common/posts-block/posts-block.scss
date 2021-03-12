@@ -21,16 +21,6 @@
         }
 
         & .card-post {
-            @media (min-width: 992px) {
-                &:hover {
-                    & .card-post__img {
-                        & img {
-                           
-                            transform: scale(1.1);
-                        }
-                    }
-                }
-            }
 
             & .card-post__title {
                 font-size: 20px;

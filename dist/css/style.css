@@ -2887,6 +2887,7 @@ textarea {
       -ms-flex: 0 0 calc(188px + 29.76%);
           flex: 0 0 calc(188px + 29.76%);
   margin-left: 20px;
+  min-height: 440px;
 }
 
 .text-head-block__column:nth-child(2) .text-head-block__img {
@@ -4090,12 +4091,6 @@ textarea {
     color: #000;
   }
 
-  .posts-block.posts-block_simple .card-post:hover .card-post__img img {
-    -webkit-transform: scale(1.1);
-        -ms-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-
   .posts-block__slider-btn:hover {
     background-color: rgba(251, 161, 61, 0.1);
   }
@@ -4212,6 +4207,7 @@ textarea {
   .text-head-block__column:nth-child(2) {
     text-align: center;
     margin-left: 0;
+    min-height: auto;
   }
 
   .text-head-block__column:nth-child(2) .text-head-block__img {
