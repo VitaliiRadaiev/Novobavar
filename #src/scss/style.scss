@@ -556,10 +556,38 @@ button.btn-default {
 	& h5 {
 
 	}
-	& h6 {}
+	& h6 {
+		font-weight: 300;
+		font-size: 18px;
+		line-height: 1.22em;
+		margin-bottom: 0.8em;
+
+		&.title-line {
+			margin-bottom: 1.6em;
+			&::before {
+				width: 222px;
+			}
+		}
+	}
 
 	& p {
 		margin-bottom: 1.36em;
+
+		& ~ .quote {
+			margin-top: 85px;
+
+			@media (max-width: $md3+px) {
+				margin-top: 40px;
+			}
+		}
+
+		& ~ .text-title-left {
+			margin-top: 85px;
+
+			@media (max-width: $md3+px) {
+				margin-top: 40px;
+			}
+		}
 	}
 
 	& ul {
@@ -568,10 +596,24 @@ button.btn-default {
 
 	& ol {}
 
-	& figure {}
+	& figure {
+		text-align: center;
+		margin-bottom: 44px;
+
+		@media (max-width: $md3+px) {
+			margin: 0 -15px 25px;
+		}
+
+		& img {
+			display: inline-block;
+			max-width: 100%;
+			height: auto;
+		}
+	}
 
 }
 // === and TEXT CONTETN BLOCK ========================================================================
+
 
 
 // ==== BLOCKS =====================================================
@@ -593,6 +635,10 @@ button.btn-default {
 	// ==== HISTORY PAGE =====================================================
 	@import "pages/#history-page";
 	// ==== AND HISTORY PAGE =====================================================
+	
+	// ==== ARTICLE =====================================================
+	@import "pages/#article";
+	// ==== AND ARTICLE =====================================================
 	
 // ==== AND PAGES =====================================================
 

@@ -946,31 +946,31 @@ if(priceSlider) {
         });
 
         
-        let list = document.querySelector('.posts-block .posts-block__list');
-        if(list) {
-            if(document.documentElement.clientWidth < 768) {
-                let btn = document.querySelector('.posts-block__bottom .learn-more-btn');
-                let arr = [...list.querySelectorAll('.posts-block__item')];
-                if(arr.length > 4) {
-                    arr = arr.slice(4, arr.length);
-                    let div = document.createElement('div');
-                    div.className = '_toggleWrap';
-                    div.append(...arr);
+        // let list = document.querySelector('.posts-block .posts-block__list');
+        // if(list) {
+        //     if(document.documentElement.clientWidth < 768) {
+        //         let btn = document.querySelector('.posts-block__bottom .learn-more-btn');
+        //         let arr = [...list.querySelectorAll('.posts-block__item')];
+        //         if(arr.length > 4) {
+        //             arr = arr.slice(4, arr.length);
+        //             let div = document.createElement('div');
+        //             div.className = '_toggleWrap';
+        //             div.append(...arr);
         
-                    //let container = list.querySelector('.container')
-                    list.append(div);
+        //             //let container = list.querySelector('.container')
+        //             list.append(div);
         
-                }
+        //         }
 
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    let block = list.querySelector('._toggleWrap');
-                    _slideDown(block, 600);
-                    btn.style.display = 'none';
-                })
+        //         btn.addEventListener('click', (e) => {
+        //             e.preventDefault();
+        //             let block = list.querySelector('._toggleWrap');
+        //             _slideDown(block, 600);
+        //             btn.style.display = 'none';
+        //         })
                 
-            }
-        }
+        //     }
+        // }
         
         
     }
@@ -1001,6 +1001,34 @@ if(priceSlider) {
         }
     }
 };
+	if(document.documentElement.clientWidth >= 992) {
+    let asideList = document.querySelector('.aside-article-list');
+    let asideColumn = document.querySelector('.article-block__aside');
+
+    window.addEventListener('scroll', () => {
+        let {left,top} = asideList.getBoundingClientRect();
+        let colTop = asideColumn.getBoundingClientRect().top;
+        if(colTop < 130) {
+            asideList.style.position = "fixed";
+            asideList.style.top ='140px';
+            asideList.style.left = left + 'px';
+        } else {
+            asideList.style.position = "static";
+        }
+    })
+
+    window.addEventListener('resize', () => {
+        if(document.documentElement.clientWidth < 992) {
+            asideList.style.position = "static";
+            return;
+        }
+        asideList.style.position = "static";
+        let {left} = asideList.getBoundingClientRect();
+        asideList.style.position = "fixed";
+        asideList.style.left = left + 'px';
+    })
+}
+;
 
 
 	let btnUp = document.querySelector('.btn-to-up');

@@ -50,6 +50,7 @@ $(document).ready(function () {
 	
 	
 	@@include('pages/#home.js');
+	@@include('pages/#article.js');
 
 
 	let btnUp = document.querySelector('.btn-to-up');
