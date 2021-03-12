@@ -4134,6 +4134,12 @@ textarea {
     padding: 15px 20px;
   }
 
+  .card-post:hover .card-post__img img {
+    -webkit-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+
   .products-block__item:hover .products-block__inner {
     -webkit-transform: scale(1.26);
         -ms-transform: scale(1.26);

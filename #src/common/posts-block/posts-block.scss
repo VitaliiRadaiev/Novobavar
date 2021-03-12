@@ -184,10 +184,16 @@
 
     @media (min-width: 992px) {
         &:hover {
-            .card-post__img-label {
+            & .card-post__img-label {
                 font-size: 34px;
                 line-height: 41px;
                 padding: 15px 20px;
+            }
+
+            & .card-post__img {
+                & img {
+                    transform: scale(1.1);
+                }
             }
         }
     }
