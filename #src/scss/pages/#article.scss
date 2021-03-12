@@ -231,10 +231,12 @@
 .aside-article-list {
     max-width: 300px;
     margin-left: auto;
+    padding-top: 70px;
 
     @media (max-width: $md2+px) {
         margin-left: 0;
         margin-right: auto;
+        padding-top: 0;
     }
 
     & > li {

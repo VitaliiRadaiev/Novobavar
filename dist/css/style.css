@@ -2000,6 +2000,11 @@ textarea {
 }
 
 .text-content h2 {
+  font-family: "Montserrat", sans-serif;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 50px;
+  line-height: 1.22em;
   margin-bottom: 0.8em;
 }
 
@@ -2947,6 +2952,11 @@ textarea {
   font-size: 14px;
 }
 
+.posts-block.posts-block_promotions .card-post__text-wrap {
+  background: rgba(249, 148, 35, 0.8);
+  color: #fff;
+}
+
 .posts-block__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3115,6 +3125,24 @@ textarea {
   -webkit-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
+}
+
+.card-post__img-label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  background: #AC1616;
+  font-size: 50px;
+  line-height: 61px;
+  color: #FFFFFF;
+  padding: 20px 20px;
+  border-radius: 10px;
+  -webkit-transition: all .4s ease;
+  -o-transition: all .4s ease;
+  transition: all .4s ease;
+  min-width: 153px;
+  text-align: center;
 }
 
 .card-post__body {
@@ -3907,6 +3935,7 @@ textarea {
 .aside-article-list {
   max-width: 300px;
   margin-left: auto;
+  padding-top: 70px;
 }
 
 .aside-article-list > li {
@@ -4008,6 +4037,10 @@ textarea {
   text-align: right;
 }
 
+.promotions-page-single .text-head-block {
+  padding-top: 28px;
+}
+
 @media (min-width: 576px) {
   .article-block__img-aside-row-2 > img + p {
     padding-top: 30px;
@@ -4093,6 +4126,12 @@ textarea {
 
   .posts-block__slider-btn:hover {
     background-color: rgba(251, 161, 61, 0.1);
+  }
+
+  .card-post:hover .card-post__img-label {
+    font-size: 34px;
+    line-height: 41px;
+    padding: 15px 20px;
   }
 
   .products-block__item:hover .products-block__inner {
@@ -4574,6 +4613,7 @@ textarea {
   .aside-article-list {
     margin-left: 0;
     margin-right: auto;
+    padding-top: 0;
   }
 
   .aside-article-list__link {
@@ -4621,6 +4661,24 @@ textarea {
     font-size: 18px;
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
+  }
+
+  .float-right {
+    float: none;
+    width: calc(100% + 30px);
+    margin-bottom: 20px;
+    margin-left: -15px;
+  }
+
+  .float-left {
+    float: none;
+    width: calc(100% + 30px);
+    margin-bottom: 20px;
+    margin-left: -15px;
+  }
+
+  .text-content h2 {
+    font-size: 38px;
   }
 
   .text-content p ~ .quote {

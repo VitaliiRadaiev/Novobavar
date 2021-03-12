@@ -517,10 +517,24 @@ button.btn-default {
 .float-right {
 	float: right;
 	margin-left: 20px;
+
+	@media (max-width: $md3+px) {
+		float: none;
+		width: calc(100% + 30px);
+		margin-bottom: 20px;
+		margin-left: -15px;
+	}
 }
 .float-left {
 	float: left;
 	margin-right: 20px;
+
+	@media (max-width: $md3+px) {
+		float: none;
+		width: calc(100% + 30px);
+		margin-bottom: 20px;
+		margin-left: -15px;
+	}
 }
 
 .clear {
@@ -541,7 +555,16 @@ button.btn-default {
 
 	& h1 {}
 	& h2 {
+		font-family: $mainFontFamily;
+		font-style: normal;
+		font-weight: 300;
+		font-size: 50px;
+		line-height: 1.22em;
 		margin-bottom: 0.8em;
+	
+		@media (max-width: $md3+px) {
+			font-size: 38px;
+		}
 
 		&.title-line {
 			&::before {
@@ -640,9 +663,21 @@ button.btn-default {
 	@import "pages/#article";
 	// ==== AND ARTICLE =====================================================
 	
-	// ==== AND ARTICLE =====================================================
+	// ==== COMPANY =====================================================
 	@import "pages/#company";
-	// ==== AND ARTICLE =====================================================
+	// ==== AND COMPANY =====================================================
+	
+	// ==== COMPANY ARTICLE  =====================================================
+	@import "pages/#company-article";
+	// ==== AND COMPANY ARTICLE  =====================================================
+	
+	// ==== PROMOTIONS PAGE  =====================================================
+	@import "pages/#promotions-page";
+	// ==== AND PROMOTIONS PAGE  =====================================================
+	
+	// ====  PROMOTIONS PAGE SINGLE =====================================================
+	@import "pages/#promotions-page-single";
+	// ==== AND PROMOTIONS PAGE SINGLE =====================================================
 	
 // ==== AND PAGES =====================================================
 
