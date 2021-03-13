@@ -170,6 +170,10 @@ textarea {
 	text-align: center;
 }
 
+.pt-60 {
+	padding-top: 60px;
+}
+
 
 .wrapper {
 	width: 100%;
@@ -678,6 +682,10 @@ button.btn-default {
 	// ====  PROMOTIONS PAGE SINGLE =====================================================
 	@import "pages/#promotions-page-single";
 	// ==== AND PROMOTIONS PAGE SINGLE =====================================================
+	
+	// ==== PRODUCTS PAGE =====================================================
+	@import "pages/#products-page";
+	// ==== AND PRODUCTS PAGE =====================================================
 	
 // ==== AND PAGES =====================================================
 

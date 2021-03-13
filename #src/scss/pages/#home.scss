@@ -381,6 +381,7 @@
         transition: all 1s ease;
         color: $textColor;
         position: relative;
+        
         @media (min-width: 992px) {
             &:hover {
                 & .products-block__inner {
