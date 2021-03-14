@@ -52,6 +52,7 @@ $(document).ready(function () {
 	@@include('pages/#home.js');
 	@@include('pages/#article.js');
 	@@include('pages/#products-page.js');
+	@@include('pages/#product-cart.js');
 
 
 	let btnUp = document.querySelector('.btn-to-up');
