@@ -7,6 +7,14 @@
         padding-top: 50px;
     }
 
+    &.cta-block_transparent {
+        background-color: transparent;
+
+        & .cta-block__text-wrap {
+            color: $textColor;
+        }
+    }
+
     &__body {
         display: flex;
         @media (max-width: $md2+px) {

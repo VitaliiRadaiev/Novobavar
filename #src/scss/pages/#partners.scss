@@ -1,0 +1,131 @@
+.partners-page {
+    
+}
+
+.partners-info {
+    padding-top: 27px;
+    padding-bottom: 47px;
+
+    @media (max-width: $md3+px) {
+        padding-bottom: 30px;
+    }
+
+    &.partners-info_bg {
+        background-color: $textColor;
+        padding-top: 77px;
+
+        @media (max-width: $md3+px) {
+            padding-top: 40px;
+        }
+
+        & .partners-info__title-2 {
+            color: #fff;
+        }
+
+        & .partners-info__list {
+            color: #fff;
+        }
+    }
+
+    &__body {
+        max-width: 1425px;
+        padding: 0 15px;
+        margin: 0 auto;
+    }
+
+    &__title {
+        margin-bottom: 126px;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 40px;
+        }
+    }
+
+    &__title-2 {
+        text-align: center;
+        margin-bottom: 83px;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 50px;
+        }
+    }
+
+    &__list {
+        display: flex;
+        margin: 0 -20px;
+        flex-wrap: wrap;
+
+        & > li {
+            padding: 0 20px;
+            margin-bottom: 70px;
+            flex: 0 1 33.333%;
+
+            @media (max-width: $md2+px) {
+                flex: 0 1 50%;
+            }
+
+            @media (max-width: $md3+px) {
+                flex: 0 1 100%;
+                margin-bottom: 50px;
+            }
+        }
+    }
+
+    &__list-icon {
+        height: 128px;
+        margin-bottom: 20px;
+        @media (max-width: $md3+px) {
+            text-align: center;
+        }
+
+        & img {
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
+
+    &__list-title {
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+        position: relative;
+        padding-bottom: 14px;
+        margin-bottom: 15px;
+        max-width: 405px;
+
+        @media (max-width: $md3+px) {
+            text-align: center;
+            margin: 0 auto 15px;
+        }
+
+        &:before {
+            position: absolute;
+            content: '';
+            left: 0;
+            bottom: 0;
+            width: 88px;
+            height: 3px;
+            background-color: $mainColor;
+
+            @media (max-width: $md3+px) {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        
+        }
+    }
+
+    &__list-text  {
+        max-width: 405px;
+
+        @media (max-width: $md3+px) {
+            text-align: center;
+            margin: 0 auto;
+        }
+    }
+
+    &__bottom {
+        padding: 30px 0;
+        text-align: center;
+    }
+}

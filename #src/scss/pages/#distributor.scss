@@ -1,0 +1,35 @@
+.distributor-page {
+    & .cta-block {
+        padding-top: 131px;
+        padding-bottom: 127px;
+
+        &.cta-block_transparent {
+            @media (max-width: $md2+px) {
+                padding-top: 27px;
+                padding-bottom: 0;
+    
+                & .cta-block__column {
+                    &:nth-child(2) {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: $md2+px) {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+
+    }
+
+    & .partners-info {
+        padding-top: 140px;
+
+        @media (max-width: $md2+px) {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+    }
+}

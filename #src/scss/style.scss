@@ -618,7 +618,21 @@ button.btn-default {
 	}
 
 	& ul {
+		li {
+			position: relative;
+			padding-left: 25px;
+			margin-bottom: 24px;
 
+			&:before {
+				position: absolute;
+				content: '';
+				left: 0;
+				top: 6px;
+				width: 7px;
+				height: 7px;
+				background-color: $mainColor;
+			}
+		}
 	}
 
 	& ol {}
@@ -691,6 +705,14 @@ button.btn-default {
 	// ==== PRODUCT CART =====================================================
 	@import "pages/#product-cart";
 	// ==== AND PRODUCT CART =====================================================
+	
+	// ==== PARTNERS =====================================================
+	@import "pages/#partners";
+	// ==== AND PARTNERS =====================================================
+	
+	// ==== DISTRIBUTOR=====================================================
+	@import "pages/#distributor";
+	// ==== AND DISTRIBUTOR =====================================================
 	
 
 // ==== AND PAGES =====================================================
