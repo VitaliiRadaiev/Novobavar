@@ -461,3 +461,311 @@
         }
     }
 }
+
+
+
+
+
+
+
+
+.food-block {
+    padding-top: 150px;
+    background-color: $bg;
+    margin-top: -1px;
+
+    @media (max-width: $md2+px) {
+        padding-bottom: 50px;
+        padding-top: 0;
+    }
+
+    &__body {
+        
+    }
+
+    &__title {
+        margin-bottom: 75px;
+        position: relative;
+        z-index: 2;
+
+        @media (max-width: $md2+px) {
+            margin-bottom: 27px;
+        }
+    }
+
+    &__inner {
+        position: relative;
+    }
+
+    &__bear-layer {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 2;
+        pointer-events: none;
+
+        @media (max-width: $md2+px) {
+            height: 614px;
+        }
+        @media (max-width: $md3+px) {
+            height: 389px;
+        }
+    }
+
+    & .food-block__bear-1 {
+        position: absolute;
+        top: 50%;
+        left: 30%;
+        transform: translateY(-50%) translateX(-28%) scale(0.8);
+        width: 31%;
+
+        & img {
+            width: 100%;
+        }
+
+        @media (max-width: $md2+px) {
+            left: 0;
+            transform: translateY(-50%) translateX(-50%) scale(0.8);
+            width: 55%;
+        }
+
+        @media (max-width: $md3+px) {
+            transform: translateY(0%) translateX(-59%) scale(1);
+            top: auto;
+            bottom: -41px;
+            width: 252px;
+        }
+    }
+    & .food-block__bear-2{
+        position: absolute;
+        top: 50%;
+        left: 30%;
+        transform: translateY(-50%);
+        z-index: 2;
+        width: 31%;
+
+        & img {
+            width: 100%;
+        }
+
+        @media (max-width: $md2+px) {
+            left: auto;
+            right: 0;
+            transform: translateY(-50%) translateX(50%);
+            width: 55%;
+        }
+
+        @media (max-width: $md3+px) {
+            transform: translateY(0%) translateX(59%);
+            top: auto;
+            bottom: -41px;
+            width: 314px;
+        }
+    }
+
+    &__slider {
+        margin-top: -105px;
+        padding-top: 105px;
+        margin-bottom: -77px;
+        padding-bottom: 77px;
+        margin-right: 58px;
+        position: relative;
+        overflow: visible;
+
+        @media (max-width: $md2+px) {
+            margin-top: 0;
+            padding-top: 0;
+            margin-bottom: 0;
+            padding-bottom: 0;
+            margin-right: 0;
+            overflow: hidden;
+        }
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+
+        @media (max-width: $md2+px) {
+            display: block;
+        }
+    }
+
+    &__item-img {
+        min-height: 614px;
+        border-radius: 20px;
+        overflow: hidden;
+        flex: 0 1 33.55%;
+
+        @media (max-width: $md2+px) {
+            margin-bottom: 110px;
+        }
+
+        @media (max-width: $md3+px) {
+            min-height: 389px;
+        }
+    }
+
+    &__item-text-wrap {
+        flex: 0 1 39.50%;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        padding-top: 115px;
+        padding-right: 80px;
+
+        @media (max-width: $md2+px) {
+            padding-top: 0;
+            padding-right: 0;
+        }
+    }
+
+    &__item-title {
+        font-size: 25px;
+        line-height: 30px;
+        margin-bottom: 60px;
+        max-width: 425px;
+
+        @media (max-width: $md2+px) {
+            max-width: none;
+        }
+    }
+
+    &__item-text {
+        flex: 1 1 auto;
+        max-width: 425px;
+        @media (max-width: $md2+px) {
+            max-width: none;
+        }
+    }
+
+    &__item-bottom {
+        max-width: 425px;
+        @media (max-width: $md2+px) {
+            max-width: none;
+        }
+    }
+
+    &__btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 2;
+        background: rgba(8, 8, 8, 0.7);
+        backdrop-filter: blur(5px);
+        width: 75px;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+        @media (max-width: $md2+px) {
+            display: none;
+        }
+
+        @media (min-width: 992px) {
+      
+            &:hover {
+                & .circle-decor__circle {
+                    transform: translate(-50%, -50%) rotate(320deg) !important;
+                }
+            }
+            
+        }
+
+        
+        & .circle-decor {
+            width: 42px;
+            height: 42px;
+            flex: 0 0 42px;
+
+            & .circle-decor__icon {
+                width: 17px;
+            }
+        }
+    }
+
+    &__btn-left {
+        left: 0;
+
+        & .circle-decor__icon {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__btn-right {
+        right: 0;
+    }
+
+    &__slider-control {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-top: 35px;
+        padding-bottom: 45px;
+        position: relative;
+        z-index: 3;
+
+        @media (max-width: $md2+px) {
+            position: absolute;
+            top: 612px;
+            left: 0;
+            width: 100%;
+        }
+
+        @media (max-width: $md3+px) {
+            top: 395px;
+        }
+    }
+
+    &__slider-btn {
+        padding: 15px;
+        transition: all .3s ease;
+        cursor: pointer;
+
+        @media (min-width: 992px) {
+            &:hover {
+                background-color: rgba($mainColor, 0.1);
+            }
+        }
+        & > span {
+            height: 15px;
+            width: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+
+            & > svg {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    }
+
+    &__slider-btn-prev {
+    }
+
+    &__slider-icon {
+        flex: 0 0 32px;
+        margin: 0 18px;
+        animation: sliderIconAnim 2s ease infinite;
+        animation-direction: alternate;
+
+        @media (max-width: $md2+px) {
+            flex: 0 0 40px;
+            margin: 0 12px;
+        }
+        
+        & img {
+            width: 100%;
+        }
+    }
+
+
+    &__slider-btn-next {
+    }
+}

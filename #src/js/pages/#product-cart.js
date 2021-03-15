@@ -84,4 +84,46 @@
             }
         }
     }
+
+
+
+
+
+    let foodBlock = document.querySelector('.food-block');
+    if(foodBlock) {
+        let dataSlider;
+        dataSlider = new Swiper(foodBlock.querySelector('.food-block__slider'), {
+            slidesPerView: 1,
+            speed: 1000,
+            navigation: {
+                nextEl: foodBlock.querySelector('.food-block__slider-btn-next'),
+                prevEl: foodBlock.querySelector('.food-block__slider-btn-prev'),
+            },
+            breakpoints: {
+                320: {
+                    slidesPerView: 1,
+                    spaceBetween: 20,
+                },
+
+                992: {
+                    slidesPerView: 1,
+                    spaceBetween: 0,
+                },
+
+            },
+        });
+
+        let btnLeft = foodBlock.querySelector('.food-block__btn-left');
+        let btnRight = foodBlock.querySelector('.food-block__btn-right');
+        if(btnLeft) {
+            btnLeft.addEventListener('click', () => {
+                dataSlider.slidePrev();
+            })
+        }
+        if(btnRight) {
+            btnRight.addEventListener('click', () => {
+                dataSlider.slideNext();
+            })
+        }
+    }
 }
