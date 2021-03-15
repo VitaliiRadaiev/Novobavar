@@ -1,0 +1,40 @@
+.shareholders-page {
+    & .cta-block {
+        padding-top: 131px;
+        padding-bottom: 127px;
+
+        &.cta-block_transparent {
+            @media (max-width: $md2+px) {
+                padding-top: 27px;
+                padding-bottom: 50px;
+    
+                & .cta-block__column {
+                    &:nth-child(2) {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+
+        @media (max-width: $md2+px) {
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+
+
+    }
+
+    & .stock-block {
+        @media (max-width: $md2+px) {
+            padding-top: 50px;
+        }
+    }
+
+    & .posts-block  {
+        padding-top: 80px;
+
+        @media (max-width: $md3+px) {
+            padding-top: 50px;
+        }
+    }
+}

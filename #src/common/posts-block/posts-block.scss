@@ -51,6 +51,14 @@
         }
     }
 
+    &__top-title {
+        margin-bottom: 96px;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 50px;
+        }
+    }
+
     &__list {
         display: flex;
         flex-wrap: wrap;
