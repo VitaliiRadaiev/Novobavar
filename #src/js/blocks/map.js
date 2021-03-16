@@ -1,30 +1,34 @@
 {
+
 	window.onload = () => {
+		var globalMarkers = [
+			[
+				new google.maps.LatLng(49.07715, 33.42683),
+				new google.maps.LatLng(49.4102183495809, 32.053993300771204),
+			],
+			[new google.maps.LatLng(49.59658749073296, 34.53045912467009),],
+			[
+				new google.maps.LatLng(50.454879437956734, 30.510714035328963),
+				new google.maps.LatLng(50.460999524974795, 30.344545827774628),
+				new google.maps.LatLng(50.00141174816132, 36.23466862294647),
+				new google.maps.LatLng(49.950187390392045, 36.16463078339878),
+			],
+		];
+
+
 		let mapNav = document.querySelector('.map-block__nav');
 		if(mapNav) {
 			let items = mapNav.querySelectorAll('.map-block__nav-item');
-			let markers = [
-				[
-					new google.maps.LatLng(49.07715, 33.42683),
-					new google.maps.LatLng(49.4102183495809, 32.053993300771204),
-				],
-				[new google.maps.LatLng(49.59658749073296, 34.53045912467009),],
-				[
-					new google.maps.LatLng(50.454879437956734, 30.510714035328963),
-					new google.maps.LatLng(50.460999524974795, 30.344545827774628),
-					new google.maps.LatLng(50.00141174816132, 36.23466862294647),
-					new google.maps.LatLng(49.950187390392045, 36.16463078339878),
-				],
-			];
+
 
 			items.forEach((item, index) => {
 				item.addEventListener('click', (e) => {
 					e.preventDefault();
 					item.classList.add('active');
 
-					markersPosition = markers[index];
+					markersPosition = globalMarkers[index];
 					updateMarkers();
-					
+
 					items.forEach(i => {
 						if(i == item) {
 							return
