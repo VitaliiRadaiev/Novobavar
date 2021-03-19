@@ -1422,8 +1422,21 @@ if(productsBlockV2) {
 			drop()
 		}
 
+		const contentString = '<div class="test">test</div>';
+
+		var info = [];
+
+		function setInfo() {
+			for (let i = 0; i < 3; i++) 
+			{
+			  info.push(new google.maps.InfoWindow({
+				content: contentString,
+			  }));
+			}
+		}
+
 		function drop() {
-			for (var i = 0; i < markersPosition.length; i++) 
+			for (let i = 0; i < markersPosition.length; i++) 
 			 {
 			   markers.push(new google.maps.Marker({
 			   position: markersPosition[i],
@@ -1431,6 +1444,17 @@ if(productsBlockV2) {
 			   icon: 'img/icons/local.svg',
 			   }));
 			 }
+
+			 setInfo();
+			 addClick(); 
+		}
+
+		function addClick() {
+			for (let i = 0; i < markers.length; i++) {
+				markers[i].addListener('click', () => {
+					info[i].open(map, markers[i]);
+				})
+			  }
 		}
 
 		function setMapOnAll(map) {
