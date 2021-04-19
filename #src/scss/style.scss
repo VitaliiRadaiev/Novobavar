@@ -703,6 +703,13 @@ button.btn-default {
 		font-weight: bold;
 	}
 
+	& a {
+		&:hover {
+			text-decoration: underline;
+			transition: all .3s ease
+		}
+	}
+
 }
 // === and TEXT CONTETN BLOCK ========================================================================
 

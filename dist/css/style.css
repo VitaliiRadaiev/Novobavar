@@ -2112,6 +2112,13 @@ textarea {
   font-weight: bold;
 }
 
+.text-content a:hover {
+  text-decoration: underline;
+  -webkit-transition: all .3s ease;
+  -o-transition: all .3s ease;
+  transition: all .3s ease;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -3654,12 +3661,12 @@ textarea {
 
 .products-block__img .products-block__img-mask {
   position: absolute;
-  top: 46%;
-  left: 52%;
+  top: 49%;
+  left: 50%;
   -webkit-transform: translate(-50%, -50%);
       -ms-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  height: 100%;
+  height: 103%;
   z-index: 2;
 }
 
@@ -5683,10 +5690,6 @@ textarea {
     background-color: #9b662e;
   }
 
-  .header__burger {
-    display: none;
-  }
-
   .menu__head-mobile {
     display: none;
   }
@@ -5870,6 +5873,12 @@ textarea {
   }
 }
 
+@media (min-width: 1024px) {
+  .header__burger {
+    display: none;
+  }
+}
+
 @media (min-width: 1921px) {
   .small-story-block__body {
     padding-bottom: 900px;
@@ -5902,11 +5911,13 @@ textarea {
   }
 }
 
-@media (max-width: 1267px) {
+@media (max-width: 1335px) {
   .menu__link {
-    font-size: 14px;
+    font-size: 12px;
   }
+}
 
+@media (max-width: 1267px) {
   .text-head-block__row-1 {
     display: block;
   }
@@ -5992,26 +6003,13 @@ textarea {
   }
 }
 
-@media (max-width: 991.98px) {
-  .select__title {
-    font-size: 18px;
+@media (max-width: 1150px) {
+  .drop-down.text-4 {
+    font-size: 12px;
   }
+}
 
-  .header__body {
-    min-height: 93px;
-  }
-
-  .header__logo {
-    margin-right: 15px;
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
-  }
-
-  .header__logo.logo {
-    max-width: 100px;
-  }
-
+@media (max-width: 1023.8px) {
   .header__facebook {
     -webkit-box-ordinal-group: 4;
         -ms-flex-order: 3;
@@ -6078,6 +6076,27 @@ textarea {
   .menu._open * {
     pointer-events: auto;
   }
+}
+
+@media (max-width: 991.98px) {
+  .select__title {
+    font-size: 18px;
+  }
+
+  .header__body {
+    min-height: 93px;
+  }
+
+  .header__logo {
+    margin-right: 15px;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+
+  .header__logo.logo {
+    max-width: 100px;
+  }
 
   .menu__list {
     display: block;
@@ -6133,6 +6152,10 @@ textarea {
 
   .sub-menu__link {
     padding-left: 55px;
+  }
+
+  .drop-down.text-4 {
+    font-size: 16px;
   }
 
   .text-head-block {

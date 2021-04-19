@@ -88,7 +88,7 @@
         transition: all .4s ease;
         position: relative;
 
-        @media (max-width: $md2+px) {
+        @media (max-width: 1023.8px) {
             order:3;
             margin-left: 10px;
         }
@@ -129,7 +129,7 @@
 
     &__language {
         margin-right: 20px;
-        @media (max-width: $md2+px) {
+        @media (max-width: 1023.8px) {
             order: 4;
             margin-right: 10px;
             display: none;
@@ -137,7 +137,7 @@
     }
 
     &__phone {
-        @media (max-width: $md2+px) {
+        @media (max-width: 1023.8px) {
             order: 2;
             margin-right: auto;
             margin-left: auto;
@@ -158,11 +158,11 @@
     }
 
     &__burger {
-        @media (min-width: 992px) {
+        @media (min-width: 1024px) {
             display: none;
         }
 
-        @media (max-width: $md2+px) {
+        @media (max-width: 1023.8px) {
             order: 5;
             margin-right: -10px;
         }
@@ -189,7 +189,7 @@
 
 
 .menu {
-    @media (max-width: $md2+px) {
+    @media (max-width: 1023.8px) {
         position: fixed;
         z-index: -1;
         top: 0;
@@ -433,8 +433,9 @@
         padding-bottom: 20px;
         white-space: nowrap;
         padding-right: 20px;
-        @media (max-width: 1267px) {
-            font-size: 14px;
+
+        @media (max-width: 1335px) {
+            font-size: 12px;
         }
 
         @media (max-width: $md2+px) {
@@ -590,6 +591,16 @@
 .drop-down {
     display: block;
     position: relative;
+
+    &.text-4 {
+        @media (max-width: 1150px) {
+            font-size: 12px;
+        }
+
+        @media (max-width: $md2+px) {
+            font-size: 16px;
+        }
+    }
 
     
         &:hover {
