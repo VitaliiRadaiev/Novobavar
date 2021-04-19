@@ -4,6 +4,23 @@
     @media (max-width: $md2+px) {
         padding-top: 100px;
     }
+
+
+    & .cta-block {
+        display: none;
+
+        &._active {
+            display: block;
+        }
+    }
+
+    & .food-block {
+        display: none;
+
+        &._active {
+            display: block;
+        }
+    }
 }
 
 
@@ -68,7 +85,6 @@
         font-size: 16px;
         line-height: 1.25em;
         align-self: flex-end;
-
         &:not(:last-child) {
             margin-bottom: 15px;
 
@@ -81,9 +97,19 @@
             background-color: rgba($mainColor, 0.8);
             width: 242px;
             min-height: 74px;
-
+            opacity: 0;
+            animation: wordsAnim .6s ease 0.4s forwards;
             @media (max-width: $md3+px) {
                 width: auto;
+            }
+        }
+
+        @keyframes wordsAnim {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
             }
         }
 

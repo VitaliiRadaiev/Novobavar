@@ -521,6 +521,7 @@ button.btn-default {
 .float-right {
 	float: right;
 	margin-left: 20px;
+	margin-bottom: 15px;
 
 	@media (max-width: $md3+px) {
 		float: none;
@@ -532,6 +533,7 @@ button.btn-default {
 .float-left {
 	float: left;
 	margin-right: 20px;
+	margin-bottom: 15px;
 
 	@media (max-width: $md3+px) {
 		float: none;
@@ -557,7 +559,18 @@ button.btn-default {
 	font-size: 18px;
 	line-height: 1.22em;
 
-	& h1 {}
+	& h1 {
+		font-family: $mainFontFamily;
+		font-style: normal;
+		font-weight: 300;
+		font-size: 65px;
+		line-height: 1.22em;
+		margin-bottom: 0.8em;
+	
+		@media (max-width: $md3+px) {
+			font-size: 46px;
+		}
+	}
 	& h2 {
 		font-family: $mainFontFamily;
 		font-style: normal;
@@ -577,17 +590,51 @@ button.btn-default {
 			}
 		}
 	}
-	& h3 {}
-	& h4 {}
+	& h3 {
+		font-family: $mainFontFamily;
+		font-weight: 400;
+		font-size: 40px;
+		line-height: 1.175em;
+		margin-bottom: 0.8em;
+	
+		@media (max-width: $md3+px) {
+			font-size: 30px;
+		}
+	
+		@media (max-width: 374px) {
+			font-size: 24px;
+		}
+	}
+	& h4 {
+		font-family: $mainFontFamily;
+		font-weight: 400;
+		font-size: 36px;
+		line-height: 1.175em;
+		margin-bottom: 0.8em;
+	
+		@media (max-width: $md3+px) {
+			font-size: 28px;
+		}
+	
+		@media (max-width: 374px) {
+			font-size: 22px;
+		}
+	}
 
 	& h5 {
-
+		font-family: $mainFontFamily;
+		font-style: normal;
+		font-weight: 500;
+		font-size: 28px;
+		line-height: 1.21em;
+		margin-bottom: 0.8em;
 	}
 	& h6 {
 		font-weight: 300;
 		font-size: 18px;
 		line-height: 1.22em;
 		margin-bottom: 0.8em;
+		font-family: $mainFontFamily;
 
 		&.title-line {
 			margin-bottom: 1.6em;
@@ -650,6 +697,10 @@ button.btn-default {
 			max-width: 100%;
 			height: auto;
 		}
+	}
+
+	& strong {
+		font-weight: bold;
 	}
 
 }

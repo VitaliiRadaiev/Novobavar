@@ -25,8 +25,13 @@
     }
 
     & .stock-block {
+        margin-bottom: 100px;
         @media (max-width: $md2+px) {
             padding-top: 50px;
+        }
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 60px;
         }
     }
 

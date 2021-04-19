@@ -1,30 +1,19 @@
-if(document.documentElement.clientWidth >= 992) {
-    let asideList = document.querySelector('.aside-article-list');
-    if(asideList) {
-        let asideColumn = document.querySelector('.article-block__aside');
+{
+    // == fix float whis dots in to ul =========
+    let textContent = document.querySelectorAll('.text-content');
+    if(textContent.length) {
+        textContent.forEach(item => {
+            let $lists = item.querySelectorAll('ul');
+            if($lists.length) {
+                $lists.forEach(list => {
+                    list.style.display = 'inline-block';
 
-        window.addEventListener('scroll', () => {
-            let {left} = asideList.getBoundingClientRect();
-            let colTop = asideColumn.getBoundingClientRect().top;
-            if(colTop < 130) {
-                asideList.style.position = "fixed";
-                asideList.style.top ='140px';
-                asideList.style.left = left + 'px';
-            } else {
-                asideList.style.position = "static";
+                    let div = document.createElement('div');
+                    list.after(div);
+                    div.append(list);
+                })
             }
-        })
-    
-        window.addEventListener('resize', () => {
-            if(document.documentElement.clientWidth < 992) {
-                asideList.style.position = "static";
-                return;
-            }
-            asideList.style.position = "static";
-            let {left} = asideList.getBoundingClientRect();
-            asideList.style.position = "fixed";
-            asideList.style.left = left + 'px';
-
         })
     }
+    // == // fix float whis dots in to ul =========
 }

@@ -200,6 +200,33 @@
             }
         }
     }
+
+    &__gallery {
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+    &__gallery-item {
+        flex: 1 1 auto;
+        max-width: 250px;
+        padding: 0 20px;
+        margin-bottom: 50px;
+        text-align: center;
+
+    }
+
+    &__gallery-img {
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        & img {
+            display: inline-block;
+            max-width: 100%;
+            max-height: 100%;
+        }
+    }
 }
 
 .text-title-left {

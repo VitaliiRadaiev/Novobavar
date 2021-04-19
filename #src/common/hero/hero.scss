@@ -31,6 +31,22 @@
         }
     }
 
+    &__logo {
+        flex: 1 1 auto;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        & img {
+            max-width: 100%;
+            width: 1000px;
+            height: auto;
+            max-height: 100%;
+        
+        }
+    }
+
     &__title {
         max-width: 638px;
         margin: 0 auto 104px;

@@ -30,7 +30,6 @@
         @media (max-width: $md3+px) {
             height: 55%;
         }
-        
     }
 
     &__title {
@@ -90,8 +89,38 @@
         text-align: left;
     }
 
+    &.wpcf7-form  {
+        & .wpcf7-response-output {
+            border-color: #fff !important;
+            font-family: $mainFontFamily;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 1.25em;
+            color:#000;
+
+            @media (max-width: $md3+px) {
+                background-color: rgba(#fff, 0.8) !important;
+            }
+        }
+    }
+
     &__item {
         margin-bottom: 22px;
+
+        & .wpcf7-form-control-wrap {
+            display: block;
+
+            & .wpcf7-not-valid-tip {
+                font-size: 12px;
+                position: absolute;
+                top: 110%;
+                padding: 0 22px;
+
+                @media (max-width: $md3+px) {
+                    padding: 0 12px;
+                }
+            }
+        }
 
         &_textarea {
             margin-top: 50px;
@@ -114,14 +143,14 @@
         font-weight: 300;
         font-size: 16px;
         line-height: 1.25em;
-        color: #693F18;
+        color: #693f18;
 
         &::placeholder {
             font-family: $mainFontFamily;
             font-weight: 300;
             font-size: 16px;
             line-height: 1.25em;
-            color: #693F18;
+            color: #693f18;
         }
 
         @media (max-width: $md3+px) {
@@ -142,14 +171,14 @@
         font-weight: 300;
         font-size: 16px;
         line-height: 1.25em;
-        color: #693F18;
+        color: #693f18;
 
         &::placeholder {
             font-family: $mainFontFamily;
             font-weight: 300;
             font-size: 16px;
             line-height: 1.25em;
-            color: #693F18;
+            color: #693f18;
         }
     }
 
@@ -161,8 +190,8 @@
                 background-color: $textColor;
 
                 & .circle-decor__circle {
-                    border-color: $textColor;  
-                    
+                    border-color: $textColor;
+
                     &::before {
                         background-color: $textColor;
                     }
@@ -174,7 +203,7 @@
                             fill: $mainColor;
                         }
                     }
-                 }
+                }
             }
 
             @media (max-width: $md3+px) {
@@ -184,7 +213,7 @@
                 margin-top: 40px;
                 &:before {
                     position: absolute;
-                    content: '';
+                    content: "";
                     top: 0;
                     right: 0;
                     height: 100%;
@@ -197,4 +226,3 @@
         }
     }
 }
-

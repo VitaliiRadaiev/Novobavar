@@ -1009,6 +1009,25 @@ if(priceSlider) {
     }
 }
 ;
+	{
+    let stockBlocks = document.querySelectorAll('.stock-block');
+    if(stockBlocks.length) {
+        stockBlocks.forEach(stockBlock => {
+            let title = stockBlock.querySelector('.stock-block__title');
+            let textWrap = stockBlock.querySelector('.stock-block__text-wrap');
+            let div = document.createElement('div');
+            div.className = '_height';
+            textWrap.prepend(div);
+
+            div.style.height = title.clientHeight + 'px';
+
+            window.addEventListener('resize', () => {
+                div.style.height = title.clientHeight + 'px';
+            })
+        })
+    }
+}
+;
 	
 	
 	
@@ -1034,35 +1053,24 @@ if(priceSlider) {
         }
     }
 };
-	if(document.documentElement.clientWidth >= 992) {
-    let asideList = document.querySelector('.aside-article-list');
-    if(asideList) {
-        let asideColumn = document.querySelector('.article-block__aside');
+	{
+    // == fix float whis dots in to ul =========
+    let textContent = document.querySelectorAll('.text-content');
+    if(textContent.length) {
+        textContent.forEach(item => {
+            let $lists = item.querySelectorAll('ul');
+            if($lists.length) {
+                $lists.forEach(list => {
+                    list.style.display = 'inline-block';
 
-        window.addEventListener('scroll', () => {
-            let {left} = asideList.getBoundingClientRect();
-            let colTop = asideColumn.getBoundingClientRect().top;
-            if(colTop < 130) {
-                asideList.style.position = "fixed";
-                asideList.style.top ='140px';
-                asideList.style.left = left + 'px';
-            } else {
-                asideList.style.position = "static";
+                    let div = document.createElement('div');
+                    list.after(div);
+                    div.append(list);
+                })
             }
-        })
-    
-        window.addEventListener('resize', () => {
-            if(document.documentElement.clientWidth < 992) {
-                asideList.style.position = "static";
-                return;
-            }
-            asideList.style.position = "static";
-            let {left} = asideList.getBoundingClientRect();
-            asideList.style.position = "fixed";
-            asideList.style.left = left + 'px';
-
         })
     }
+    // == // fix float whis dots in to ul =========
 }
 ;
 	let productsBlockV2 = document.querySelector('.products-block-v2');
@@ -1135,30 +1143,32 @@ if(productsBlockV2) {
         let sliderImages;
         let sliderHistory;
         let productNav = productBlock.querySelector('.product__nav');
+        let ctaBlocks = document.querySelectorAll('.cta-block');
+        let foodBlocks = document.querySelectorAll('.food-block');
 
+        let slides = productBlock.querySelectorAll('.product__slider-info .swiper-slide');
+        let startSlid;
 
-        sliderInfo = new Swiper(productBlock.querySelector('.product__slider-info'), {
-            
-            effect: 'fade',
-            slidesPerView: 1,
-            spaceBetween: 30,
-            speed: 1000,
-            on: {
-                slideChange: function(data) {
-                    sliderHistory.slideTo(data.activeIndex);
-                    let activeTab = productNav.children[data.activeIndex];
-                    activeTab.classList.add('active');
-
-                    for(let j = 0; j < productNav.children.length; j++) {
-                        if(productNav.children[j] == activeTab) {
-                            continue;
-                        }                        
-                        productNav.children[j].classList.remove('active');
-                    }
-
-                }
+        slides.forEach((item, index) => {
+            if(item.classList.contains('_active-slide')) {
+                startSlid = index;
             }
         });
+
+        if(ctaBlocks.length) {
+            let activeCta = document.querySelector(`#cta-slide-${startSlid+1}`);
+            if(activeCta) {
+                activeCta.classList.add('_active');
+            }
+        }
+
+        if(foodBlocks.length) {
+            let activeFood = document.querySelector(`#food-slide-${startSlid+1}`);
+            if(activeFood) {
+                activeFood.classList.add('_active');
+            }
+        }
+
 
         sliderImages = new Swiper(productBlock.querySelector('.product__slider-images'), {
             
@@ -1175,22 +1185,93 @@ if(productsBlockV2) {
             speed: 1000,
         });
 
+        sliderInfo = new Swiper(productBlock.querySelector('.product__slider-info'), {
+            
+            effect: 'fade',
+            slidesPerView: 1,
+            spaceBetween: 30,
+            speed: 1000,
+            initialSlide: startSlid,
+            on: {
+                slideChange: function(data) {
+                    sliderHistory.slideTo(data.activeIndex);
+                    let activeTab = productNav.children[data.activeIndex];
+                    activeTab.classList.add('active');
+
+
+                    if(ctaBlocks.length) {
+                        let activeCta = document.querySelector(`#cta-slide-${data.activeIndex+1}`);
+                        if(activeCta) {
+                            activeCta.classList.add('_active');
+                        }
+
+                        for(let j = 0; j < ctaBlocks.length; j++) {
+                            if(ctaBlocks[j] == activeCta) {
+                                continue;
+                            }                        
+                            ctaBlocks[j].classList.remove('_active');
+                        }
+
+                    }
+            
+                    if(foodBlocks.length) {
+                        let activeFood = document.querySelector(`#food-slide-${data.activeIndex+1}`);
+                        if(activeFood) {
+                            activeFood.classList.add('_active');
+                        }
+
+                        for(let j = 0; j < foodBlocks.length; j++) {
+                            if(foodBlocks[j] == activeFood) {
+                                continue;
+                            }                        
+                            foodBlocks[j].classList.remove('_active');
+                        }
+      
+                    }
+
+                   
+                    for(let j = 0; j < productNav.children.length; j++) {
+                        if(productNav.children[j] == activeTab) {
+                            continue;
+                        }                        
+                        productNav.children[j].classList.remove('active');
+                    }
+
+                }
+            }
+        });
+
          sliderInfo.controller.control = sliderImages;
          sliderImages.controller.control = sliderInfo;
         
 
         
         if(productNav) {
+            productNav.children[startSlid].classList.add('active');
+
             for(let i = 0; i < productNav.children.length; i++) {
+                let text = productNav.children[i].innerText;
+
+                if(!productNav.children[i].classList.contains('active')) {
+                    productNav.children[i].innerText = text.slice(0, 6) + '...';
+                }
+
                 productNav.children[i].addEventListener('click', function(e) {
                     e.preventDefault();
                     this.classList.add('active');
                     sliderInfo.slideTo(i)
+
+                    setTimeout(() => {
+                        productNav.children[i].innerText = text;
+
+                    },400)
+
                     for(let j = 0; j < productNav.children.length; j++) {
                         if(productNav.children[j] == this) {
                             continue;
                         }                        
                         productNav.children[j].classList.remove('active');
+                        productNav.children[j].innerText = productNav.children[j].innerText.slice(0, 6) + '...';
                     }
                 })
             }
@@ -1218,42 +1299,44 @@ if(productsBlockV2) {
 
 
 
-    let foodBlock = document.querySelector('.food-block');
-    if(foodBlock) {
-        let dataSlider;
-        dataSlider = new Swiper(foodBlock.querySelector('.food-block__slider'), {
-            slidesPerView: 1,
-            speed: 1000,
-            navigation: {
-                nextEl: foodBlock.querySelector('.food-block__slider-btn-next'),
-                prevEl: foodBlock.querySelector('.food-block__slider-btn-prev'),
-            },
-            breakpoints: {
-                320: {
-                    slidesPerView: 1,
-                    spaceBetween: 20,
+    let foodBlocks = document.querySelectorAll('.food-block');
+    if(foodBlocks.length) {
+        foodBlocks.forEach(foodBlock => {
+            let dataSlider;
+            dataSlider = new Swiper(foodBlock.querySelector('.food-block__slider'), {
+                slidesPerView: 1,
+                speed: 1000,
+                navigation: {
+                    nextEl: foodBlock.querySelector('.food-block__slider-btn-next'),
+                    prevEl: foodBlock.querySelector('.food-block__slider-btn-prev'),
                 },
-
-                992: {
-                    slidesPerView: 1,
-                    spaceBetween: 0,
+                breakpoints: {
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 20,
+                    },
+    
+                    992: {
+                        slidesPerView: 1,
+                        spaceBetween: 0,
+                    },
+    
                 },
-
-            },
-        });
-
-        let btnLeft = foodBlock.querySelector('.food-block__btn-left');
-        let btnRight = foodBlock.querySelector('.food-block__btn-right');
-        if(btnLeft) {
-            btnLeft.addEventListener('click', () => {
-                dataSlider.slidePrev();
-            })
-        }
-        if(btnRight) {
-            btnRight.addEventListener('click', () => {
-                dataSlider.slideNext();
-            })
-        }
+            });
+    
+            let btnLeft = foodBlock.querySelector('.food-block__btn-left');
+            let btnRight = foodBlock.querySelector('.food-block__btn-right');
+            if(btnLeft) {
+                btnLeft.addEventListener('click', () => {
+                    dataSlider.slidePrev();
+                })
+            }
+            if(btnRight) {
+                btnRight.addEventListener('click', () => {
+                    dataSlider.slideNext();
+                })
+            }
+        })
     }
 };
 
@@ -1293,144 +1376,243 @@ if(productsBlockV2) {
 
 {
 
-	window.onload = () => {
-		var globalMarkers = [
-			[
-				new google.maps.LatLng(49.07715, 33.42683),
-				new google.maps.LatLng(49.4102183495809, 32.053993300771204),
+	var globalMarkers = {
+		"1": {
+			"1": [
+				50.4501,
+				30.5234
 			],
-			[new google.maps.LatLng(49.59658749073296, 34.53045912467009),],
-			[
-				new google.maps.LatLng(50.454879437956734, 30.510714035328963),
-				new google.maps.LatLng(50.460999524974795, 30.344545827774628),
-				new google.maps.LatLng(50.00141174816132, 36.23466862294647),
-				new google.maps.LatLng(49.950187390392045, 36.16463078339878),
+			"2": [
+				47.8388,
+				35.139567
+			]
+		},
+		"2": {
+			"3": [
+				46.482526,
+				30.7233095
 			],
-		];
-
-
-		let mapNav = document.querySelector('.map-block__nav');
-		if(mapNav) {
-			let items = mapNav.querySelectorAll('.map-block__nav-item');
-
-
-			items.forEach((item, index) => {
-				item.addEventListener('click', (e) => {
-					e.preventDefault();
-					item.classList.add('active');
-
-					markersPosition = globalMarkers[index];
-					updateMarkers();
-
-					items.forEach(i => {
-						if(i == item) {
-							return
-						}
-
-						i.classList.remove('active');
-					})
-				})
-			})
+			"4": [
+				49.9935,
+				36.230383
+			]
+		},
+		"3": {
+			"5": [
+				47.097133,
+				37.543367
+			],
+			"6": [
+				49.839683,
+				24.029717
+			]
 		}
 	}
 
 
-	var isMap = document.getElementById("map");
-	if(isMap) {
+
+
+
+
 		var map;
+		var map2;
 		var markersPosition;
+		
 		var center = {
 			lat: 49.07715,
 			lng: 33.42683,
 		}
 
+		if(document.getElementById('map')) {
+			var iconUrl = document.getElementById('map').dataset.set;
+
+		}
+
+		if(document.getElementById('map2')) {
+			var iconUrl2 = document.getElementById('map2').dataset.set;
+
+		}
+		
 
 
 		var markers = [];
 
 		function initMap() {
-
-			markersPosition = [
-				new google.maps.LatLng(49.07715, 33.42683),
-				new google.maps.LatLng(49.4102183495809, 32.053993300771204),
-			]
-			// markersPosition = [new google.maps.LatLng(49.59658749073296, 34.53045912467009),]; Полтава
-
-			map = new google.maps.Map(document.getElementById('map'), {
-				center: {lat: center.lat, lng: center.lng},
-
-				zoom: 6,
-
-				styles: [
-					{
-					  "featureType": "administrative.country",
-					  "elementType": "labels.text.fill",
-					  "stylers": [
-						{
-						  "color": "#121212"
-						}
-					  ]
-					},
-					{
-					  "featureType": "administrative.locality",
-					  "elementType": "labels.text.fill",
-					  "stylers": [
-						{
-						  "color": "#fba13d"
-						}
-					  ]
-					},
-					{
-					  "featureType": "landscape.natural",
-					  "elementType": "geometry.fill",
-					  "stylers": [
-						{
-						  "color": "#ffffff"
-						}
-					  ]
-					},
-					{
-					  "featureType": "poi",
-					  "elementType": "geometry.fill",
-					  "stylers": [
-						{
-						  "color": "#fafafa"
-						}
-					  ]
-					},
-					{
-					  "featureType": "road.highway",
-					  "elementType": "geometry.stroke",
-					  "stylers": [
-						{
-						  "color": "#ffffff"
-						}
-					  ]
-					},
-					{
-					  "featureType": "water",
-					  "elementType": "geometry.fill",
-					  "stylers": [
-						{
-						  "color": "#ededed"
-						}
-					  ]
+			const createAray = () => {
+				let arr = [];
+	
+				if(globalMarkers) {
+					for(let item in globalMarkers) {
+						arr.push(globalMarkers[item]);
 					}
-				  ]
-			});
+				}
+	
+				return arr.map(obj => {
+					let arr = [];
+					for(let item in obj) {
+						arr.push(new google.maps.LatLng(obj[item][0], obj[item][1]))
+					}
+					return arr;
+				})
+				
+			}
 
-			drop()
+			var markersArr = createAray();
+
+			window.onload = () => {
+
+				let mapNav = document.querySelector('.map-block__nav');
+				if(mapNav) {
+					let items = mapNav.querySelectorAll('.map-block__nav-item');
+		
+		
+					items.forEach((item, index) => {
+						item.addEventListener('click', (e) => {
+							e.preventDefault();
+							item.classList.add('active');
+		
+							markersPosition = markersArr[index];
+							updateMarkers();
+		
+							items.forEach(i => {
+								if(i == item) {
+									return
+								}
+		
+								i.classList.remove('active');
+							})
+						})
+					})
+				}
+			}
+
+
+			markersPosition = markersArr[0];
+
+			if(document.getElementById('map')) {
+				map = new google.maps.Map(document.getElementById('map'), {
+					center: {lat: center.lat, lng: center.lng},
+	
+					zoom: 6,
+	
+					styles: [
+						{
+						  "featureType": "administrative.country",
+						  "elementType": "labels.text.fill",
+						  "stylers": [
+							{
+							  "color": "#121212"
+							}
+						  ]
+						},
+						{
+						  "featureType": "administrative.locality",
+						  "elementType": "labels.text.fill",
+						  "stylers": [
+							{
+							  "color": "#fba13d"
+							}
+						  ]
+						},
+						{
+						  "featureType": "landscape.natural",
+						  "elementType": "geometry.fill",
+						  "stylers": [
+							{
+							  "color": "#ffffff"
+							}
+						  ]
+						},
+						{
+						  "featureType": "poi",
+						  "elementType": "geometry.fill",
+						  "stylers": [
+							{
+							  "color": "#fafafa"
+							}
+						  ]
+						},
+						{
+						  "featureType": "road.highway",
+						  "elementType": "geometry.stroke",
+						  "stylers": [
+							{
+							  "color": "#ffffff"
+							}
+						  ]
+						},
+						{
+						  "featureType": "water",
+						  "elementType": "geometry.fill",
+						  "stylers": [
+							{
+							  "color": "#ededed"
+							}
+						  ]
+						}
+					  ]
+				});
+
+				drop();
+			}
+
+
+
+			if(document.getElementById('map2')) {
+				map2 = new google.maps.Map(document.getElementById('map2'), {
+					center: {lat: 49.95591090900552, lng: 36.16249347011773},
+				
+					zoom: 15,
+	
+					//styles: ,
+				});
+	
+				var markersPosition2 = new google.maps.Marker({
+				position: {lat: 49.95591090900552, lng: 36.16249347011773},
+				map: map2,
+				//icon: iconUrl2,
+				})
+			}
+
+
+
+			
 		}
 
 		const contentString = '<div class="test">test</div>';
 
 		var info = [];
 
-		function setInfo() {
-			for (let i = 0; i < 3; i++) 
+		function setInfo(length) {
+
+			for (let i = 0; i < length; i++) 
 			{
 			  info.push(new google.maps.InfoWindow({
-				content: contentString,
+				content: `<div class="map-card">
+							<h2>Сільпо ${i}</h2>
+							<p>Супермаркет - Московський проспект, 256</p>
+							<h3>Відкрито до 23:00</h3>
+							<ul>
+								<li>
+									<div class="map-card__icons active">
+										<img class="map-card__icon-check" src="http://bavaria.upro.site/wp-content/themes/bavaria/assets/img/icons/check-green.svg" alt="">
+										<img class="map-card__icon-cross" src="http://bavaria.upro.site/wp-content/themes/bavaria/assets/img/icons/cross.svg" alt="">
+									</div>
+									Покупки в магазині
+								</li>
+								<li>
+									<div class="map-card__icons">
+										<img class="map-card__icon-check" src="http://bavaria.upro.site/wp-content/themes/bavaria/assets/img/icons/check-green.svg" alt="">
+										<img class="map-card__icon-cross" src="http://bavaria.upro.site/wp-content/themes/bavaria/assets/img/icons/cross.svg" alt="">
+									</div>
+									Замовити онлайн
+								</li>
+							</ul>
+							<div class="map-card__decor">
+								<div class="map-card__decor-circle"></div>
+							</div>
+							<img class="map-card__decor-icon" src="http://bavaria.upro.site/wp-content/themes/bavaria/assets/img/icons/map-icon.svg" alt="">
+						</div>`,
 			  }));
 			}
 		}
@@ -1441,20 +1623,37 @@ if(productsBlockV2) {
 			   markers.push(new google.maps.Marker({
 			   position: markersPosition[i],
 			   map: map,
-			   icon: 'img/icons/local.svg',
+			   icon: iconUrl,
 			   }));
 			 }
 
-			 setInfo();
+			 setInfo(markers.length);
 			 addClick(); 
 		}
 
 		function addClick() {
+			// if(document.documentElement.clientWidth < 992) {
+			// 	for (let i = 0; i < markers.length; i++) {
+			// 		markers[i].addListener('click', () => {
+			// 			info[i].open(map, markers[i]);
+			// 		})
+			// 	}
+			// } else {
+			// 	for (let i = 0; i < markers.length; i++) {
+			// 		markers[i].addListener('mouseover', () => {
+			// 			info[i].open(map, markers[i]);
+			// 		})
+			// 		markers[i].addListener('mouseout', () => {
+			// 			info[i].close();
+			// 		})
+			// 	}
+			// }
+
 			for (let i = 0; i < markers.length; i++) {
 				markers[i].addListener('click', () => {
 					info[i].open(map, markers[i]);
 				})
-			  }
+			}
 		}
 
 		function setMapOnAll(map) {
@@ -1466,16 +1665,22 @@ if(productsBlockV2) {
 
 		function updateMarkers() {
 			setMapOnAll(null)
-			
+			markers = [];
+
 			for (var i = 0; i < markersPosition.length; i++) 
 			{
 			  markers.push(new google.maps.Marker({
 			  position: markersPosition[i],
 			  map: map,
-			  icon: 'img/icons/local.svg',
+			  icon: iconUrl,
 			  }));
 			}
+
+			info = [];
+
+			setInfo(markers.length);
+			addClick(); 
 		
 		}
-	}
+	
 };
