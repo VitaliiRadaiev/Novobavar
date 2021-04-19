@@ -194,7 +194,7 @@
             width: 100%;
             height: auto;
 
-            & path {
+            & path, & rect, & circle {
                 fill: #f6ac59;
                 opacity: 0.4;
             }

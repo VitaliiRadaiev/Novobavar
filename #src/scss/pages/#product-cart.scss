@@ -12,6 +12,25 @@
         &._active {
             display: block;
         }
+
+        & .cta-block__body {
+            flex-direction: row-reverse;
+        }
+
+        & .cta-block__column {
+            &:nth-child(1) {
+                align-items: flex-start;
+            }
+
+            &:nth-child(2) {
+                margin-right: 40px;
+                text-align: right;
+
+                @media (max-width: $md2+px) {
+                    margin-right: 0;
+                }
+            }
+        }
     }
 
     & .food-block {
