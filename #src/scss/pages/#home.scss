@@ -431,17 +431,8 @@
 
                 & .products-block__img {
                     & .products-block__img-mask {
-                        & #Layer_81_copy {
-                            opacity: 1;
-                        }
-
-                        & #Layer_8_copy {
-                            opacity: 1;
-                        }
-
-                        & #cls-3 {
-                            opacity: 1;
-                        }
+                       transition: all 1s ease;
+                       opacity: 1;
                     }
                 }
             }
@@ -491,11 +482,8 @@
             transform: translate(-50%, -50%);
             height: 103%;
             z-index: 2;
-
-            & image {
-                transition: all 1s ease;
-                opacity: 0;
-            }
+            opacity: 0;
+            transition: all 1s ease;
         }
     }
 

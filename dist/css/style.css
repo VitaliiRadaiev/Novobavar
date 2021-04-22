@@ -3669,13 +3669,10 @@ textarea {
           transform: translate(-50%, -50%);
   height: 103%;
   z-index: 2;
-}
-
-.products-block__img .products-block__img-mask image {
+  opacity: 0;
   -webkit-transition: all 1s ease;
   -o-transition: all 1s ease;
   transition: all 1s ease;
-  opacity: 0;
 }
 
 .products-block__decor {
@@ -5863,15 +5860,10 @@ textarea {
     left: 71%;
   }
 
-  .products-block__item:hover .products-block__img .products-block__img-mask #Layer_81_copy {
-    opacity: 1;
-  }
-
-  .products-block__item:hover .products-block__img .products-block__img-mask #Layer_8_copy {
-    opacity: 1;
-  }
-
-  .products-block__item:hover .products-block__img .products-block__img-mask #cls-3 {
+  .products-block__item:hover .products-block__img .products-block__img-mask {
+    -webkit-transition: all 1s ease;
+    -o-transition: all 1s ease;
+    transition: all 1s ease;
     opacity: 1;
   }
 
