@@ -40,8 +40,16 @@
         display: flex;
         flex-direction: column;
 
+        @media (max-width: $md2+px) {
+            padding-left: 0;
+        }
+
         @media (max-width: $md3+px) {
             padding-left: 0;
+        }
+
+        &._flex-end {
+            justify-content: flex-end;
         }
     }
 
@@ -264,6 +272,15 @@
         margin-left: 0;
         margin-right: auto;
         padding-top: 0;
+        position: static !important;
+    }
+
+    &._fixed {
+        position: fixed;
+
+        &._static {
+            position: static;
+        }
     }
 
     & > li {
