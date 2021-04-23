@@ -216,8 +216,8 @@ textarea {
 	transition: all .4s ease;
 	@media (min-width: 992px) {
 		&:hover {
-			& svg path {
-				fill: $mainColor;
+			& img, & svg {
+				opacity: 0.8;
 			}
 		}
 	}
@@ -225,9 +225,7 @@ textarea {
 	& img, & svg {
 		width: 100%;
 		height: auto;
-		& path {
-			transition: all .3s ease;
-		}
+		transition: all .3s ease;
 	}
 }
 

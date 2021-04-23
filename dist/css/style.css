@@ -1738,10 +1738,6 @@ textarea {
 .logo svg {
   width: 100%;
   height: auto;
-}
-
-.logo img path,
-.logo svg path {
   -webkit-transition: all .3s ease;
   -o-transition: all .3s ease;
   transition: all .3s ease;
@@ -5692,8 +5688,9 @@ textarea {
     background: rgba(251, 161, 61, 0.3);
   }
 
-  .logo:hover svg path {
-    fill: #fba13d;
+  .logo:hover img,
+  .logo:hover svg {
+    opacity: 0.8;
   }
 
   .learn-more-btn:hover .circle-decor__circle {
