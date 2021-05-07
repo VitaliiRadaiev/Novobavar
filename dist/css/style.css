@@ -4920,8 +4920,21 @@ textarea {
   background: #fd9726;
 }
 
+.product-cart-page .header._is-scroll .menu:not(._open) .menu__link {
+  padding-bottom: 20px;
+}
+
+.product-cart-page .header._is-scroll .menu:not(._open) .menu__link:before {
+  bottom: 10px;
+}
+
 .product-cart-page .header._is-scroll .sub-menu {
-  top: 60px;
+  top: 69px;
+}
+
+.product-cart-page .header .menu__link:before {
+  background-color: rgba(0, 0, 0, 0.4);
+  bottom: 12px;
 }
 
 .product-cart-page .header .sub-menu {
@@ -6024,7 +6037,7 @@ textarea {
   }
 
   .product-cart-page .header._is-scroll .sub-menu {
-    top: 55px;
+    top: 64px;
   }
 
   .product-cart-page .header .sub-menu {

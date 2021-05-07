@@ -21,13 +21,30 @@
         }
 
         &._is-scroll {
+            & .menu:not(._open) {
+                & .menu__link {
+                    padding-bottom: 20px;
+
+                    &:before {
+                        bottom: 10px;
+                    }
+                }
+            }
+
             & .sub-menu {
-                top: 60px;
+                top: 69px;
                 @media (max-width: 1335px) {
-                    top: 55px;
+                    top: 64px;
                 }
 
 
+            }
+        }
+
+        & .menu__link {
+            &:before {
+                background-color: rgba($textColor, 0.4);
+                bottom: 12px;
             }
         }
 
