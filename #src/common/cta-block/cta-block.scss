@@ -17,6 +17,8 @@
 
     &__body {
         display: flex;
+        margin: 0 auto;
+        max-width: 1710px;
         @media (max-width: $md2+px) {
             display: block;
             text-align: center;
@@ -69,6 +71,16 @@
 
             @media (max-width: $md2+px) {
                 width: 100%;
+
+                &[src="http://bavaria.upro.site/wp-content/uploads/2021/03/text-img13.png"] {
+                    width: 60%;
+                }
+            }
+
+            @media (max-width: 575px) {
+                &[src="http://bavaria.upro.site/wp-content/uploads/2021/03/text-img13.png"] {
+                    width: 93%;
+                }
             }
         }
     }

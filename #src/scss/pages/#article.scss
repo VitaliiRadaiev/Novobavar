@@ -3,6 +3,14 @@
         & .hero__title {
             max-width: 950px;
         }
+
+        & .hero__bg {
+            & img[src="http://bavaria.upro.site/wp-content/uploads/2021/03/patrick-fore-rrvAuudnAfg-unsplash-scaled.jpg"] {
+                @media (max-width: 575px) {
+                    object-position: 78%;
+                }
+            }
+        }
     }
 }
 
@@ -31,6 +39,24 @@
 
         @media (max-width: 1267px) {
             padding-left: 0;
+        }
+
+        & ._img-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+
+            & img {
+                margin-bottom: 20px;
+                flex: 0 0 calc(25% - 10px);
+                height: auto !important; 
+                min-width: auto;
+                width: calc(33% - 10px) !important;
+                @media (max-width: $md3+px) {
+                    flex: 0 0 calc(50% - 7px);
+                }
+            }
         }
     }
 
@@ -92,9 +118,7 @@
                         text-align: center;
                         margin-bottom: 40px;
         
-                        & .circle-decor {
-                            display: none;
-                        }
+                        
                     }
 
                     & .article-block__img-aside-dec-1 {
@@ -130,10 +154,8 @@
                 left: 0;
                 text-align: center;
                 margin-bottom: 40px;
-
-                & .circle-decor {
-                    display: none;
-                }
+                display: inline-block;
+                
             }
 
             & img {
@@ -152,6 +174,7 @@
         z-index: -1;
         right: -15px;
         bottom: 91px;
+
 
         &.circle-decor {
             width: 80px;
@@ -192,6 +215,15 @@
             min-height: auto;
         }
 
+        @media (max-width: $md3+px) {
+            display: flex;
+            flex-direction: column;
+
+            & > img {
+                order: 1;
+            }
+        }
+
         & > img {
             @media (max-width: 575px) {
                 float: none;
@@ -222,6 +254,12 @@
         margin-bottom: 50px;
         text-align: center;
 
+        @media (max-width: 575px) {
+            max-width: none;
+            flex: 0 1 50%;
+            padding: 0 7.5px;
+        }
+
     }
 
     &__gallery-img {
@@ -229,11 +267,24 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        height: 150px;
+        
         
         & img {
             display: inline-block;
             max-width: 100%;
             max-height: 100%;
+        }
+    }
+
+    &__gallery-text {
+        @media (max-width: $md3+px) {
+            font-size: 16px;
+            word-break: break-word;
+        }
+
+        @media (max-width: $md4+px) {
+            font-size: 14px;
         }
     }
 }

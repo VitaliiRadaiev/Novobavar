@@ -35,7 +35,11 @@
 
 
         & .sub-menu {
-            top: 56px;
+            top: 60px;
+
+            @media (max-width: 1335px) {
+                top: 55px;
+            }
         }
     }
 
@@ -129,10 +133,9 @@
 
     &__language {
         margin-right: 20px;
+        min-width: 120px;
         @media (max-width: 1023.8px) {
-            order: 4;
-            margin-right: 10px;
-            display: none;
+            margin: 0 auto;
         }
     }
 
@@ -382,7 +385,7 @@
             &.active {
                 & .menu__link {
                     &::before {
-                        width: 120px;
+                        width: 120px !important;
                         max-width: 100%;
                     }
                 }
@@ -497,7 +500,7 @@
 
 .sub-menu {
     position: absolute;
-    top: 85px;
+    top: 90px;
     left: -60px;
     background-color: $bg;
     min-width: 500px;
@@ -507,6 +510,11 @@
     visibility: hidden;
     opacity: 0;
     pointer-events: none;
+
+    @media (max-width: 1335px) {
+        top: 85px;
+    }
+
 
     @media (max-width: $md2+px) {
         min-width: auto;

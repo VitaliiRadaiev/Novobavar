@@ -488,6 +488,10 @@ button.btn-default {
             }
         }
     }
+
+	@media (max-width: $md3+px) {
+		display: none !important;
+	}
 }
 
 @keyframes btnUpAnim {
@@ -523,7 +527,7 @@ button.btn-default {
 
 	@media (max-width: $md3+px) {
 		float: none;
-		width: calc(100% + 30px);
+		width: calc(100% + 45px);
 		margin-bottom: 20px;
 		margin-left: -15px;
 	}
@@ -535,7 +539,7 @@ button.btn-default {
 
 	@media (max-width: $md3+px) {
 		float: none;
-		width: calc(100% + 30px);
+		width: calc(100% + 45px);
 		margin-bottom: 20px;
 		margin-left: -15px;
 	}
@@ -660,10 +664,16 @@ button.btn-default {
 				margin-top: 40px;
 			}
 		}
+
+		@media (max-width: $md3+px) {
+			&:empty {
+				display: none;
+			}
+		}
 	}
 
 	& ul {
-		padding-left: 18px;
+		padding-left: 0;
 	}
 
 	
@@ -672,8 +682,9 @@ button.btn-default {
 			padding-left: 25px;
 			margin-bottom: 24px;
 			list-style-type: square;
+			list-style-position: inside;
 			color: $mainColor;
-			padding-left: 5px;
+			padding-left: 0px;
 			& > * {
 				color: $textColor;
 			}

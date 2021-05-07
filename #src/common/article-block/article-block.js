@@ -28,4 +28,17 @@ if(articleBLock) {
             }
         })
     }
+
+    let $p = document.querySelectorAll('.article-page .article-block p');
+    if($p.length) {
+        $p.forEach(item => {
+            for(i of item.childNodes) {
+                if(i.nodeName === 'IMG') {
+                    item.classList.add('_img-gallery');
+                    item.innerHTML = item.innerHTML.replace(/&nbsp;/g, '');
+                    return
+                }
+            }
+        })
+    }
 }

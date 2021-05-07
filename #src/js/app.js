@@ -49,6 +49,8 @@ $(document).ready(function () {
 	@@include('../common/posts-block/posts-block.js');
 	@@include('../common/stock-block/stock-block.js');
 	@@include('../common/article-block/article-block.js');
+	@@include('../common/products-block/products-block.js');
+	@@include('../common/text-head-block/text-head-block.js');
 	
 	
 	@@include('pages/#home.js');

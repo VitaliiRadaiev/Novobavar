@@ -1,3 +1,11 @@
 .company-page {
-    
+    & .hero {
+        & .hero__bg {
+            & img {
+                @media (max-width: $md3+px) {
+                    object-position: 64%;
+                }
+            }
+        }
+    }
 }

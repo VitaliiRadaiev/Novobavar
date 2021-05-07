@@ -1058,7 +1058,80 @@ if(articleBLock) {
             }
         })
     }
+
+    let $p = document.querySelectorAll('.article-page .article-block p');
+    if($p.length) {
+        $p.forEach(item => {
+            for(i of item.childNodes) {
+                if(i.nodeName === 'IMG') {
+                    item.classList.add('_img-gallery');
+                    item.innerHTML = item.innerHTML.replace(/&nbsp;/g, '');
+                    return
+                }
+            }
+        })
+    }
 };
+	const animItems = document.querySelectorAll('.products-block__column');
+
+if (animItems.length > 0) {
+	window.addEventListener('scroll', animOnScroll);
+	function animOnScroll() {
+		for (let index = 0; index < animItems.length; index++) {
+			const animItem = animItems[index];
+			const animItemHeight = animItem.offsetHeight;
+			const animItemOffset = offset(animItem).top;
+			const animStart = 1.5;
+
+			let animItemPoint = window.innerHeight - animItemHeight / animStart;
+			if (animItemHeight > window.innerHeight) {
+				animItemPoint = window.innerHeight - window.innerHeight / animStart;
+			}
+
+			if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset - (animItemPoint / 4))) {
+				animItem.classList.add('_active');
+
+			} else {
+				if (!animItem.classList.contains('_anim-no-hide')) {
+					animItem.classList.remove('_active');
+				}
+			}
+		}
+	}
+	function offset(el) {
+		const rect = el.getBoundingClientRect(),
+			scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+			scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+		return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+	}
+
+	setTimeout(() => {
+		animOnScroll();
+	}, 300);
+}
+;
+	let images = document.querySelectorAll('.text-head-block__row-2 .text-head-block__img');
+if(images.length) {
+    images.forEach(img => {
+        img.insertAdjacentHTML('afterbegin', `  
+        <div class="circle-decor">
+            <span class="circle-decor__circle circle-decor__circle_rotate"></span>
+            <span class="circle-decor__icon">
+                
+            </span>
+        </div>`)
+    })
+}
+
+let p = document.querySelectorAll('.text-content p');
+if(p.length) {
+    p.forEach(item => {
+        if(item.innerHTML === '&nbsp;') {
+            item.style.display = 'none';
+        }
+    })
+}
+;
 	
 	
 	
@@ -1084,33 +1157,33 @@ if(articleBLock) {
         }
     }
 };
-	{
-    // == fix float whis dots in to ul =========
-    let textContent = document.querySelectorAll('.text-content');
-    if(textContent.length) {
-        textContent.forEach(item => {
-            let $lists = item.querySelectorAll('ul');
-            if($lists.length) {
-                $lists.forEach(list => {
-                    list.style.display = 'inline-block';
+	// {
+//     // == fix float whis dots in to ul =========
+//     let textContent = document.querySelectorAll('.text-content');
+//     if(textContent.length) {
+//         textContent.forEach(item => {
+//             let $lists = item.querySelectorAll('ul');
+//             if($lists.length) {
+//                 $lists.forEach(list => {
+//                     list.style.display = 'inline-block';
 
-                    let div = document.createElement('div');
-                    list.after(div);
-                    div.append(list);
-                })
-            }
-        })
-    }
-    // == // fix float whis dots in to ul =========
-}
+//                     let div = document.createElement('div');
+//                     list.after(div);
+//                     div.append(list);
+//                 })
+//             }
+//         })
+//     }
+//     // == // fix float whis dots in to ul =========
+// }
 ;
 	let productsBlockV2 = document.querySelector('.products-block-v2');
-if(productsBlockV2) {
+if (productsBlockV2) {
     let mySwiper;
 
     function mobileSlider() {
         let slider = productsBlockV2.querySelector('.products-block-v2__slider');
-        if(document.documentElement.clientWidth > 767 && slider.dataset.mobile == 'false') {
+        if (document.documentElement.clientWidth > 767 && slider.dataset.mobile == 'false') {
             mySwiper = new Swiper(slider, {
                 slidesPerView: 3,
                 centeredSlides: true,
@@ -1128,10 +1201,10 @@ if(productsBlockV2) {
             //mySwiper.slideNext(0);
         }
 
-        if(document.documentElement.clientWidth <= 767) {
+        if (document.documentElement.clientWidth <= 767) {
             slider.dataset.mobile = 'false';
 
-            if(slider.classList.contains('swiper-container-initialized')) {
+            if (slider.classList.contains('swiper-container-initialized')) {
                 mySwiper.destroy();
             }
         }
@@ -1145,22 +1218,44 @@ if(productsBlockV2) {
 
     const productsMobileHandler = () => {
         let products = productsBlockV2.querySelectorAll('.swiper-slide');
-        if(products.length) {
-            products.forEach(item => {
-                item.addEventListener('click', function() {
-                    if(document.documentElement.clientWidth < 768) {
-                        this.classList.add('_active');
+        if (products.length) {
+            const animItems = products;
 
-                        products.forEach(item => {
-                            if(item == this) {
-                                return
+            if (animItems.length > 0) {
+                window.addEventListener('scroll', animOnScroll);
+                function animOnScroll() {
+                    for (let index = 0; index < animItems.length; index++) {
+                        const animItem = animItems[index];
+                        const animItemHeight = animItem.offsetHeight;
+                        const animItemOffset = offset(animItem).top;
+                        const animStart = 1.5;
+
+                        let animItemPoint = window.innerHeight - animItemHeight / animStart;
+                        if (animItemHeight > window.innerHeight) {
+                            animItemPoint = window.innerHeight - window.innerHeight / animStart;
+                        }
+
+                        if ((pageYOffset > animItemOffset - animItemPoint) && pageYOffset < (animItemOffset - (animItemPoint / 4))) {
+                            animItem.classList.add('_active');
+
+                        } else {
+                            if (!animItem.classList.contains('_anim-no-hide')) {
+                                animItem.classList.remove('_active');
                             }
-
-                            item.classList.remove('_active');
-                        })
+                        }
                     }
-                })
-            })
+                }
+                function offset(el) {
+                    const rect = el.getBoundingClientRect(),
+                        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+                        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    return { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+                }
+
+                setTimeout(() => {
+                    animOnScroll();
+                }, 300);
+            }
         }
     }
 

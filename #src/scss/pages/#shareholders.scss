@@ -1,4 +1,14 @@
 .shareholders-page {
+    & .hero {
+        & .hero__bg {
+            & img {
+                @media (max-width: 575px) {
+                    object-position: 42%;
+                }
+            }
+        }
+    }
+
     & .cta-block {
         padding-top: 131px;
         padding-bottom: 127px;

@@ -1,4 +1,21 @@
+.contact-page {
+    & .hero {
+        & .hero__bg {
+            & img {
+                @media (max-width: $md3+px) {
+                    object-position: 93%;
+                }
+
+                @media (max-width: 575px) {
+                    object-position: 88%;
+                }
+            }
+        }
+    }
+}
 .contact {
+
+
 
     &__body {
         display: flex;

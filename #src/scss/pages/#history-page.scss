@@ -1,0 +1,11 @@
+.history-page {
+    & .hero {
+        & .hero__bg {
+            & img {
+                @media (max-width: 575px) {
+                    object-position: 82%;
+                }
+            }
+        } 
+     }
+}

@@ -3,6 +3,11 @@
     display: flex;
     flex-direction: column;
     position: relative;
+
+    @media (max-width: $md3+px) {
+        min-height: 640px;
+    }
+
     &__bg {
         position: absolute;
         top: 0;
@@ -38,6 +43,11 @@
         justify-content: center;
         align-items: center;
         margin-bottom: 80px;
+
+        @media (max-width: $md3+px) {
+            margin-bottom: 20px;
+            max-width: 308px;
+        }
         
         & img {
             width: 100%;
